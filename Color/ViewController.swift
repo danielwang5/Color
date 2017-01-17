@@ -12,11 +12,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var plateView: UIImageView!
 
+    @IBOutlet weak var answerField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         plateView.image = UIImage(named: "plate1")
+        answerField.keyboardType = UIKeyboardType.DecimalPad
     }
 
     override func didReceiveMemoryWarning() {

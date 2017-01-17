@@ -17,21 +17,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-E4-SKO">
-                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KVW-Ss-V7G">
+                                <rect key="frame" x="180" y="180" width="240" height="290"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-E4-SKO">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="BbQ-Ng-rf0"/>
+                                            <constraint firstAttribute="height" constant="240" id="jUH-Oz-5w9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
+                                        <rect key="frame" x="0.0" y="260" width="240" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="BbQ-Ng-rf0"/>
-                                    <constraint firstAttribute="height" constant="240" id="jUH-Oz-5w9"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="bkt-3c-R9W"/>
+                                    <constraint firstAttribute="width" constant="240" id="oIu-Ff-TLw"/>
                                 </constraints>
-                            </imageView>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rd2-E4-SKO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7W0-qm-ZzI"/>
-                            <constraint firstItem="rd2-E4-SKO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZNQ-7p-c0z"/>
+                            <constraint firstItem="KVW-Ss-V7G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xDk-2t-m0X"/>
+                            <constraint firstItem="KVW-Ss-V7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yeO-5N-fHV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="answerField" destination="Vdc-7k-KAF" id="zM2-9E-H2m"/>
                         <outlet property="plateView" destination="rd2-E4-SKO" id="hVg-k9-vhH"/>
                     </connections>
                 </viewController>
