@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var plateView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        plateView.image = UIImage(named: "plate1")
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    
 }
 

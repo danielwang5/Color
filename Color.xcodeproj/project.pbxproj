@@ -13,6 +13,7 @@
 		4857EED71E2DF25A00801CBB /* Color.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4857EED51E2DF25A00801CBB /* Color.xcdatamodeld */; };
 		4857EED91E2DF25A00801CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4857EED81E2DF25A00801CBB /* Assets.xcassets */; };
 		4857EEDC1E2DF25A00801CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */; };
+		4857EEE51E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEE41E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4857EED81E2DF25A00801CBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4857EEDB1E2DF25A00801CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4857EEDD1E2DF25A00801CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4857EEE41E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-01-38.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		4857EECD1E2DF25A00801CBB /* Color */ = {
 			isa = PBXGroup;
 			children = (
+				4857EEE31E2DF9AE00801CBB /* Images */,
 				4857EECE1E2DF25A00801CBB /* AppDelegate.swift */,
 				4857EED01E2DF25A00801CBB /* ViewController.swift */,
 				4857EED21E2DF25A00801CBB /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				4857EED51E2DF25A00801CBB /* Color.xcdatamodeld */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		4857EEE31E2DF9AE00801CBB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4857EEE41E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4857EEDC1E2DF25A00801CBB /* LaunchScreen.storyboard in Resources */,
+				4857EEE51E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg in Resources */,
 				4857EED91E2DF25A00801CBB /* Assets.xcassets in Resources */,
 				4857EED41E2DF25A00801CBB /* Main.storyboard in Resources */,
 			);
@@ -292,6 +304,7 @@
 				4857EEE21E2DF25A00801CBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
