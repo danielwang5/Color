@@ -22,6 +22,16 @@ class ViewController: UIViewController {
         answerField.keyboardType = UIKeyboardType.DecimalPad
     }
 
+    @IBAction func submitAnswer(sender: UITextField) {
+        var answer = Int(sender.text!)
+        if(answer == 12){
+            NSLog("Correct!")
+        }
+        else{
+            NSLog("Incorrect.")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

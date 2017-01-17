@@ -27,10 +27,13 @@
                                             <constraint firstAttribute="height" constant="240" id="jUH-Oz-5w9"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
                                         <rect key="frame" x="0.0" y="260" width="240" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="submitAnswer:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="k78-ka-5Df"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
