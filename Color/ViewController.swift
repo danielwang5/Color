@@ -33,13 +33,24 @@ class ViewController: UIViewController {
         plateView.addGestureRecognizer(swipeLeft)
     }
 
+    var answerList = [12,8,6,29,57]
+    
     @IBAction func submitAnswer(sender: UITextField) {
         var answer = Int(sender.text!)
-        if(answer == 12){
-            NSLog("Correct!")
+        
+        if(answer == answerList[imageIndex]){
+            let alertController = UIAlertController(title: "Correct!", message:
+                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
         else{
-            NSLog("Incorrect.")
+            let alertController = UIAlertController(title: "Incorrect.", message:
+                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
