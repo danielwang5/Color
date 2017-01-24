@@ -33,10 +33,15 @@ class ViewController: UIViewController {
         plateView.addGestureRecognizer(swipeLeft)
     }
 
-    var answerList = [12,8,6,29,57]
+    var answerList = [12,8,6,29,57] //The Answers!!!
+    
+    var imageIndex: NSInteger = 0
+    var maxImages = 4 //number of images - 1
     
     @IBAction func submitAnswer(sender: UITextField) {
         var answer = Int(sender.text!)
+        
+        ResultData().saveAnswer(imageIndex, answer: answer!)
         
         if(answer == answerList[imageIndex]){
             let alertController = UIAlertController(title: "Correct!", message:
@@ -54,8 +59,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var imageIndex: NSInteger = 0
-    var maxImages = 4 //number of images - 1
+    
     
     func swiped(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -86,6 +90,8 @@ class ViewController: UIViewController {
             default:
                 break //stops the code/codes nothing.
             }
+            
+            answerField.text = "\(ResultData().fetchAnswer(imageIndex))"
         }
     }
     
