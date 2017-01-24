@@ -14,6 +14,12 @@
 		4857EED91E2DF25A00801CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4857EED81E2DF25A00801CBB /* Assets.xcassets */; };
 		4857EEDC1E2DF25A00801CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */; };
 		4857EEE51E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEE41E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg */; };
+		4857EEE71E3061FD00801CBB /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4857EEE61E3061FD00801CBB /* StartViewController.swift */; };
+		4857EEE91E3062F800801CBB /* Ishihara-Plate-02-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEE81E3062F800801CBB /* Ishihara-Plate-02-38.jpg */; };
+		4857EEEB1E30631000801CBB /* Ishihara-Plate-03-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEEA1E30631000801CBB /* Ishihara-Plate-03-38.jpg */; };
+		4857EEED1E30632200801CBB /* Ishihara-Plate-04-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEEC1E30632200801CBB /* Ishihara-Plate-04-38.jpg */; };
+		4857EEEF1E30633100801CBB /* Ishihara-Plate-05-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEEE1E30633100801CBB /* Ishihara-Plate-05-38.jpg */; };
+		4857EEF11E37061800801CBB /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4857EEF01E37061800801CBB /* ResultData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		4857EEDB1E2DF25A00801CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4857EEDD1E2DF25A00801CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4857EEE41E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-01-38.jpg"; sourceTree = "<group>"; };
+		4857EEE61E3061FD00801CBB /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		4857EEE81E3062F800801CBB /* Ishihara-Plate-02-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-02-38.jpg"; sourceTree = "<group>"; };
+		4857EEEA1E30631000801CBB /* Ishihara-Plate-03-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-03-38.jpg"; sourceTree = "<group>"; };
+		4857EEEC1E30632200801CBB /* Ishihara-Plate-04-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-04-38.jpg"; sourceTree = "<group>"; };
+		4857EEEE1E30633100801CBB /* Ishihara-Plate-05-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-05-38.jpg"; sourceTree = "<group>"; };
+		4857EEF01E37061800801CBB /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +72,10 @@
 			children = (
 				4857EEE31E2DF9AE00801CBB /* Images */,
 				4857EECE1E2DF25A00801CBB /* AppDelegate.swift */,
+				4857EEE61E3061FD00801CBB /* StartViewController.swift */,
 				4857EED01E2DF25A00801CBB /* ViewController.swift */,
 				4857EED21E2DF25A00801CBB /* Main.storyboard */,
+				4857EEF01E37061800801CBB /* ResultData.swift */,
 				4857EED81E2DF25A00801CBB /* Assets.xcassets */,
 				4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */,
 				4857EEDD1E2DF25A00801CBB /* Info.plist */,
@@ -74,6 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				4857EEE41E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg */,
+				4857EEE81E3062F800801CBB /* Ishihara-Plate-02-38.jpg */,
+				4857EEEA1E30631000801CBB /* Ishihara-Plate-03-38.jpg */,
+				4857EEEC1E30632200801CBB /* Ishihara-Plate-04-38.jpg */,
+				4857EEEE1E30633100801CBB /* Ishihara-Plate-05-38.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -138,8 +156,12 @@
 			files = (
 				4857EEDC1E2DF25A00801CBB /* LaunchScreen.storyboard in Resources */,
 				4857EEE51E2DF9F100801CBB /* Ishihara-Plate-01-38.jpg in Resources */,
+				4857EEE91E3062F800801CBB /* Ishihara-Plate-02-38.jpg in Resources */,
 				4857EED91E2DF25A00801CBB /* Assets.xcassets in Resources */,
+				4857EEED1E30632200801CBB /* Ishihara-Plate-04-38.jpg in Resources */,
+				4857EEEF1E30633100801CBB /* Ishihara-Plate-05-38.jpg in Resources */,
 				4857EED41E2DF25A00801CBB /* Main.storyboard in Resources */,
+				4857EEEB1E30631000801CBB /* Ishihara-Plate-03-38.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4857EEF11E37061800801CBB /* ResultData.swift in Sources */,
 				4857EED11E2DF25A00801CBB /* ViewController.swift in Sources */,
+				4857EEE71E3061FD00801CBB /* StartViewController.swift in Sources */,
 				4857EED71E2DF25A00801CBB /* Color.xcdatamodeld in Sources */,
 				4857EECF1E2DF25A00801CBB /* AppDelegate.swift in Sources */,
 			);

@@ -20,15 +20,72 @@ class ViewController: UIViewController {
         
         plateView.image = UIImage(named: "plate1")
         answerField.keyboardType = UIKeyboardType.DecimalPad
+        
+        plateView.userInteractionEnabled = true//so that image will move
+        
+        //set up gestures for swiping left and right
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        plateView.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        plateView.addGestureRecognizer(swipeLeft)
     }
 
+    var answerList = [12,8,6,29,57]
+    
     @IBAction func submitAnswer(sender: UITextField) {
         var answer = Int(sender.text!)
-        if(answer == 12){
-            NSLog("Correct!")
+        
+        if(answer == answerList[imageIndex]){
+            let alertController = UIAlertController(title: "Correct!", message:
+                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
         else{
-            NSLog("Incorrect.")
+            let alertController = UIAlertController(title: "Incorrect.", message:
+                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    var imageIndex: NSInteger = 0
+    var maxImages = 4 //number of images - 1
+    
+    func swiped(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right :
+                NSLog("User swiped right")
+                
+                // decrease index first
+                imageIndex -= 1
+                
+                // check if index is in range
+                if imageIndex < 0 {
+                    imageIndex = maxImages
+                }
+                plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+            
+            case UISwipeGestureRecognizerDirection.Left:
+                NSLog("User swiped Left")
+                
+                // increase index first
+                imageIndex += 1
+
+                // check if index is in range
+                if imageIndex > maxImages {
+                    imageIndex = 0
+                }
+                plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+            default:
+                break //stops the code/codes nothing.
+            }
         }
     }
     
