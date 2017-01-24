@@ -19,6 +19,7 @@
 		4857EEEB1E30631000801CBB /* Ishihara-Plate-03-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEEA1E30631000801CBB /* Ishihara-Plate-03-38.jpg */; };
 		4857EEED1E30632200801CBB /* Ishihara-Plate-04-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEEC1E30632200801CBB /* Ishihara-Plate-04-38.jpg */; };
 		4857EEEF1E30633100801CBB /* Ishihara-Plate-05-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEEE1E30633100801CBB /* Ishihara-Plate-05-38.jpg */; };
+		4857EEF11E37061800801CBB /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4857EEF01E37061800801CBB /* ResultData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4857EEEA1E30631000801CBB /* Ishihara-Plate-03-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-03-38.jpg"; sourceTree = "<group>"; };
 		4857EEEC1E30632200801CBB /* Ishihara-Plate-04-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-04-38.jpg"; sourceTree = "<group>"; };
 		4857EEEE1E30633100801CBB /* Ishihara-Plate-05-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-05-38.jpg"; sourceTree = "<group>"; };
+		4857EEF01E37061800801CBB /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				4857EEE61E3061FD00801CBB /* StartViewController.swift */,
 				4857EED01E2DF25A00801CBB /* ViewController.swift */,
 				4857EED21E2DF25A00801CBB /* Main.storyboard */,
+				4857EEF01E37061800801CBB /* ResultData.swift */,
 				4857EED81E2DF25A00801CBB /* Assets.xcassets */,
 				4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */,
 				4857EEDD1E2DF25A00801CBB /* Info.plist */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4857EEF11E37061800801CBB /* ResultData.swift in Sources */,
 				4857EED11E2DF25A00801CBB /* ViewController.swift in Sources */,
 				4857EEE71E3061FD00801CBB /* StartViewController.swift in Sources */,
 				4857EED71E2DF25A00801CBB /* Color.xcdatamodeld in Sources */,

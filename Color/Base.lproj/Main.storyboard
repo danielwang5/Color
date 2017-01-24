@@ -17,15 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-aO-oxl">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-aO-oxl">
                                 <rect key="frame" x="277" y="285" width="46" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7mb-dT-dtx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Test!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-N7-EBz">
+                                <rect key="frame" x="165" y="151" width="271" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Gel-eM-ClO"/>
+                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="top" secondItem="Pm5-N7-EBz" secondAttribute="bottom" constant="64" id="QQn-n4-2hZ"/>
+                            <constraint firstItem="Pm5-N7-EBz" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="ZxF-fg-MSO"/>
+                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerY" secondItem="KaA-r0-dPw" secondAttribute="centerY" id="yiY-cl-asF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSW-94-rLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
