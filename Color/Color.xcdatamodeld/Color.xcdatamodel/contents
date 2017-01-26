@@ -6,8 +6,14 @@
         <attribute name="a3" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="a4" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="a5" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <fetchedProperty name="fet" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Results"/>
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </fetchedProperty>
     </entity>
     <elements>
-        <element name="Results" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Results" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>
