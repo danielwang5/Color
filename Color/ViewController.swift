@@ -43,15 +43,9 @@ class ViewController: UIViewController {
     
     var imageIndex: NSInteger = 0
     var maxImages = 4 //number of images - 1
-    
-<<<<<<< HEAD
-    @IBAction func submitAnswer(sender: UITextField) {
-        var answer = Int(sender.text!)
-        
-        ResultData().saveAnswer(imageIndex, typed: answer!)
-=======
+
     @IBAction func submitAnswer(_ sender: UITextField) {
-        var answer = Int(sender.text!)
+        let answer = Int(sender.text!)
         
         
         //currArray[imageIndex] = answer!
@@ -59,7 +53,6 @@ class ViewController: UIViewController {
         results?.ans["a\(imageIndex)"] = answer!
         
         //ResultData().saveAnswer(imageIndex, answer: answer!)
->>>>>>> CoreData
         
         if(answer == answerList[imageIndex]){
             let alertController = UIAlertController(title: "Correct!", message:
@@ -77,17 +70,12 @@ class ViewController: UIViewController {
         }
     }
     
-<<<<<<< HEAD
-    
-=======
->>>>>>> CoreData
-    
     
     func swiped(_ gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-<<<<<<< HEAD
-                case UISwipeGestureRecognizerDirection.Right :
+
+                case UISwipeGestureRecognizerDirection.right :
                     NSLog("User swiped right")
                     
                     // decrease index first
@@ -99,30 +87,11 @@ class ViewController: UIViewController {
                     }
                     plateView.image = UIImage(named: "plate\(imageIndex + 1)")
                 
-                case UISwipeGestureRecognizerDirection.Left:
+                case UISwipeGestureRecognizerDirection.left:
                     NSLog("User swiped Left")
                     
                     // increase index first
                     imageIndex += 1
-=======
-            case UISwipeGestureRecognizerDirection.right :
-                NSLog("User swiped right")
-                
-                // decrease index first
-                imageIndex -= 1
-                
-                // check if index is in range
-                if imageIndex < 0 {
-                    imageIndex = maxImages
-                }
-                plateView.image = UIImage(named: "plate\(imageIndex + 1)")
-            
-            case UISwipeGestureRecognizerDirection.left:
-                NSLog("User swiped Left")
-                
-                // increase index first
-                imageIndex += 1
->>>>>>> CoreData
 
                     // check if index is in range
                     if imageIndex > maxImages {
@@ -132,12 +101,8 @@ class ViewController: UIViewController {
                 default:
                     break //stops the code/codes nothing.
             }
-            
-<<<<<<< HEAD
-            answerField.text = "\(ResultData().fetchAnswer(imageIndex))"
-=======
+
             answerField.text = "\((results?.ans["a\(imageIndex)"])!)"
->>>>>>> CoreData
         }
     }
     
