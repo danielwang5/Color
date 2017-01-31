@@ -30,16 +30,21 @@ class ResultData: NSObject, NSCoding {
     
     //MARK: Initialization
     
-    init?(answer:[String:Int]) {
+    init?(answer: Int) {
+        super.init()
+        
+        self.ans = loadAnswers()!
         
         // The name must not be empty
-        guard !answer.isEmpty else {
-            return nil
+        if self.ans.isEmpty{
+            self.ans = ["a0":0,"a1":0,"a2":0,"a3":0,"a4":0]
         }
         
         // The rating must be between 0 and 5 inclusive??
         // Initialize stored properties.
-        self.ans = answer
+        
+        
+        
         
     }
     
@@ -57,8 +62,20 @@ class ResultData: NSObject, NSCoding {
         }
         
         // Must call designated initializer.
-        self.init(answer: name)
+        self.init(answer:0)
         
+    }
+    
+    func saveAnswers() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(self.ans, toFile: ResultData.ArchiveURL.path)
+        if(isSuccessfulSave){
+            print("YYYYYYEEEEESSSS!!!!!")
+        }
+    }
+    
+    func loadAnswers() -> [String:Int]?  {
+        print("LOADED!")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ResultData.ArchiveURL.path) as? [String:Int]
     }
 }
 

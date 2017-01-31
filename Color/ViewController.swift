@@ -22,10 +22,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //currArray = (results?.ans)!
-        results = ResultData(answer: ["a0":0,"a1":0,"a2":0,"a3":0,"a4":0])
+        
+        results = ResultData(answer:0)
         
         plateView.image = UIImage(named: "plate1")
         answerField.keyboardType = UIKeyboardType.decimalPad
+        answerField.text = "\((results?.ans["a\(0)"])!)"
         
         plateView.isUserInteractionEnabled = true//so that image will move
         
@@ -51,6 +53,8 @@ class ViewController: UIViewController {
         //currArray[imageIndex] = answer!
         
         results?.ans["a\(imageIndex)"] = answer!
+        results?.saveAnswers()
+        
         
         //ResultData().saveAnswer(imageIndex, answer: answer!)
         
@@ -105,6 +109,7 @@ class ViewController: UIViewController {
             answerField.text = "\((results?.ans["a\(imageIndex)"])!)"
         }
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
