@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var answerField: UITextField!
     
     var results: ResultData?
-    var currArray:[Int] = [0,0,0,0,0]
+    //var currArray:[Int] = [0,0,0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        currArray = (results?.ans)!
+        //currArray = (results?.ans)!
         
         plateView.image = UIImage(named: "plate1")
         answerField.keyboardType = UIKeyboardType.decimalPad
@@ -47,9 +47,9 @@ class ViewController: UIViewController {
         var answer = Int(sender.text!)
         
         
-        currArray[imageIndex] = answer!
+        //currArray[imageIndex] = answer!
         
-        results = ResultData(answer: currArray)
+        results?.ans[imageIndex] = answer!
         
         //ResultData().saveAnswer(imageIndex, answer: answer!)
         
