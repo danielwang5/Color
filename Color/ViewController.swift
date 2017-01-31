@@ -14,56 +14,79 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var answerField: UITextField!
     
+    var results: ResultData?
+    //var currArray:[Int] = [0,0,0,0,0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        plateView.image = UIImage(named: "plate1")
-        answerField.keyboardType = UIKeyboardType.DecimalPad
+        //currArray = (results?.ans)!
+        results = ResultData(answer: ["a0":0,"a1":0,"a2":0,"a3":0,"a4":0])
         
-        plateView.userInteractionEnabled = true//so that image will move
+        plateView.image = UIImage(named: "plate1")
+        answerField.keyboardType = UIKeyboardType.decimalPad
+        
+        plateView.isUserInteractionEnabled = true//so that image will move
         
         //set up gestures for swiping left and right
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
-        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
         plateView.addGestureRecognizer(swipeRight)
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         plateView.addGestureRecognizer(swipeLeft)
     }
 
-    var answerList = [12,8,6,29,57]
+    var answerList = [12,8,6,29,57] //The Answers!!!
     
     var imageIndex: NSInteger = 0
     var maxImages = 4 //number of images - 1
     
+<<<<<<< HEAD
     @IBAction func submitAnswer(sender: UITextField) {
         var answer = Int(sender.text!)
         
         ResultData().saveAnswer(imageIndex, typed: answer!)
+=======
+    @IBAction func submitAnswer(_ sender: UITextField) {
+        var answer = Int(sender.text!)
+        
+        
+        //currArray[imageIndex] = answer!
+        
+        results?.ans["a\(imageIndex)"] = answer!
+        
+        //ResultData().saveAnswer(imageIndex, answer: answer!)
+>>>>>>> CoreData
         
         if(answer == answerList[imageIndex]){
             let alertController = UIAlertController(title: "Correct!", message:
-                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
         else{
             let alertController = UIAlertController(title: "Incorrect.", message:
-                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
+<<<<<<< HEAD
+    
+=======
+>>>>>>> CoreData
     
     
-    func swiped(gesture: UIGestureRecognizer) {
+    func swiped(_ gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
+<<<<<<< HEAD
                 case UISwipeGestureRecognizerDirection.Right :
                     NSLog("User swiped right")
                     
@@ -81,6 +104,25 @@ class ViewController: UIViewController {
                     
                     // increase index first
                     imageIndex += 1
+=======
+            case UISwipeGestureRecognizerDirection.right :
+                NSLog("User swiped right")
+                
+                // decrease index first
+                imageIndex -= 1
+                
+                // check if index is in range
+                if imageIndex < 0 {
+                    imageIndex = maxImages
+                }
+                plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+            
+            case UISwipeGestureRecognizerDirection.left:
+                NSLog("User swiped Left")
+                
+                // increase index first
+                imageIndex += 1
+>>>>>>> CoreData
 
                     // check if index is in range
                     if imageIndex > maxImages {
@@ -91,7 +133,11 @@ class ViewController: UIViewController {
                     break //stops the code/codes nothing.
             }
             
+<<<<<<< HEAD
             answerField.text = "\(ResultData().fetchAnswer(imageIndex))"
+=======
+            answerField.text = "\((results?.ans["a\(imageIndex)"])!)"
+>>>>>>> CoreData
         }
     }
     
