@@ -35,8 +35,13 @@ class ViewController: UIViewController {
 
     var answerList = [12,8,6,29,57]
     
+    var imageIndex: NSInteger = 0
+    var maxImages = 4 //number of images - 1
+    
     @IBAction func submitAnswer(sender: UITextField) {
         var answer = Int(sender.text!)
+        
+        ResultData().saveAnswer(imageIndex, typed: answer!)
         
         if(answer == answerList[imageIndex]){
             let alertController = UIAlertController(title: "Correct!", message:
@@ -54,38 +59,39 @@ class ViewController: UIViewController {
         }
     }
     
-    var imageIndex: NSInteger = 0
-    var maxImages = 4 //number of images - 1
+    
     
     func swiped(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.Right :
-                NSLog("User swiped right")
+                case UISwipeGestureRecognizerDirection.Right :
+                    NSLog("User swiped right")
+                    
+                    // decrease index first
+                    imageIndex -= 1
+                    
+                    // check if index is in range
+                    if imageIndex < 0 {
+                        imageIndex = maxImages
+                    }
+                    plateView.image = UIImage(named: "plate\(imageIndex + 1)")
                 
-                // decrease index first
-                imageIndex -= 1
-                
-                // check if index is in range
-                if imageIndex < 0 {
-                    imageIndex = maxImages
-                }
-                plateView.image = UIImage(named: "plate\(imageIndex + 1)")
-            
-            case UISwipeGestureRecognizerDirection.Left:
-                NSLog("User swiped Left")
-                
-                // increase index first
-                imageIndex += 1
+                case UISwipeGestureRecognizerDirection.Left:
+                    NSLog("User swiped Left")
+                    
+                    // increase index first
+                    imageIndex += 1
 
-                // check if index is in range
-                if imageIndex > maxImages {
-                    imageIndex = 0
-                }
-                plateView.image = UIImage(named: "plate\(imageIndex + 1)")
-            default:
-                break //stops the code/codes nothing.
+                    // check if index is in range
+                    if imageIndex > maxImages {
+                        imageIndex = 0
+                    }
+                    plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+                default:
+                    break //stops the code/codes nothing.
             }
+            
+            answerField.text = "\(ResultData().fetchAnswer(imageIndex))"
         }
     }
     
