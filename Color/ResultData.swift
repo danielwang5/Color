@@ -17,7 +17,7 @@ class ResultData: NSObject, NSCoding {
     
     //MARK: Properties
     
-    var ans: [Int] = [0,0,0,0,0]
+    var ans: [String: Int] = ["a0":0,"a1":0,"a2":0,"a3":0,"a4":0]
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -31,18 +31,14 @@ class ResultData: NSObject, NSCoding {
     
     //MARK: Initialization
     
-    init?(answer:[Int]) {
+    init?(answer:[String:Int]) {
         
         // The name must not be empty
         guard !answer.isEmpty else {
             return nil
         }
         
-        // The rating must be between 0 and 5 inclusively
-        guard (answer.min()! >= 0) && (answer.max()! <= 99) else {
-            return nil
-        }
-        
+        // The rating must be between 0 and 5 inclusive??
         // Initialize stored properties.
         self.ans = answer
         
@@ -57,7 +53,7 @@ class ResultData: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         
         // The name is required. If we cannot decode a name string, the initializer should fail.
-        guard let name = aDecoder.decodeObject(forKey: PropertyKey.ans) as? [Int] else {
+        guard let name = aDecoder.decodeObject(forKey: PropertyKey.ans) as? [String:Int] else {
             return nil
         }
         

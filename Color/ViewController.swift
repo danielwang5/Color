@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //currArray = (results?.ans)!
+        results = ResultData(answer: ["a0":0,"a1":0,"a2":0,"a3":0,"a4":0])
         
         plateView.image = UIImage(named: "plate1")
         answerField.keyboardType = UIKeyboardType.decimalPad
@@ -49,7 +50,7 @@ class ViewController: UIViewController {
         
         //currArray[imageIndex] = answer!
         
-        results?.ans[imageIndex] = answer!
+        results?.ans["a\(imageIndex)"] = answer!
         
         //ResultData().saveAnswer(imageIndex, answer: answer!)
         
@@ -101,7 +102,7 @@ class ViewController: UIViewController {
                 break //stops the code/codes nothing.
             }
             
-            answerField.text = "\(results?.ans[imageIndex])"
+            answerField.text = "\((results?.ans["a\(imageIndex)"])!)"
         }
     }
     
