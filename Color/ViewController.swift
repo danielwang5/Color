@@ -6,6 +6,25 @@
 //  Copyright © 2017 DanielW. All rights reserved.
 //
 
+
+
+/*DATABASE
+
+ Whos playing (phone id)
+ Question #
+ start of game (timestamp)
+ nth plate tested (timestamp)
+ *type of phone (apple, samsung, etc)
+ *settings (brightness, etc)
+ custom colors (number, background)
+ number they put
+ correct answer
+ right or wrong (bool)
+ user data (country, age, sex, location, etc)
+ 
+ 
+ */
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -14,14 +33,29 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var answerField: UITextField!
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    // DATA!
+    let modelName = UIDevice.current.modelName
+    let brightness = UIScreen.main.brightness
+    let startTime = Date().timeIntervalSince1970
+    
     var results: ResultData?
     //var currArray:[Int] = [0,0,0,0,0]
+    
+    //Timer 
+    var counter = 30
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         //currArray = (results?.ans)!
+        
+        //setup timer
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        
         
         results = ResultData(answer:0)
         
@@ -39,6 +73,14 @@ class ViewController: UIViewController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         plateView.addGestureRecognizer(swipeLeft)
+        
+        
+        answerField.text = "\(startTime)"
+    }
+    
+    func timerAction() {
+        counter -= 1
+        timerLabel.text = "\(counter)"
     }
 
     var answerList = [12,8,6,29,57] //The Answers!!!

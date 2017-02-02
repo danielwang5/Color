@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-aO-oxl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-aO-oxl">
                                 <rect key="frame" x="283" y="285" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -37,10 +37,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Gel-eM-ClO"/>
+                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" constant="112.5" id="Gel-eM-ClO"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="top" secondItem="Pm5-N7-EBz" secondAttribute="bottom" constant="64" id="QQn-n4-2hZ"/>
                             <constraint firstItem="Pm5-N7-EBz" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="ZxF-fg-MSO"/>
-                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerY" secondItem="KaA-r0-dPw" secondAttribute="centerY" id="yiY-cl-asF"/>
+                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerY" secondItem="KaA-r0-dPw" secondAttribute="centerY" constant="-33.5" id="yiY-cl-asF"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -61,17 +61,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KVW-Ss-V7G">
-                                <rect key="frame" x="180" y="155" width="240" height="290"/>
+                                <rect key="frame" x="180" y="155" width="240" height="331"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcE-u8-ZOj">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-E4-SKO">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <rect key="frame" x="0.0" y="40.5" width="240" height="240"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="BbQ-Ng-rf0"/>
                                             <constraint firstAttribute="height" constant="240" id="jUH-Oz-5w9"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
-                                        <rect key="frame" x="0.0" y="260" width="240" height="30"/>
+                                        <rect key="frame" x="0.0" y="300.5" width="240" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -94,6 +100,7 @@
                     <connections>
                         <outlet property="answerField" destination="Vdc-7k-KAF" id="zM2-9E-H2m"/>
                         <outlet property="plateView" destination="rd2-E4-SKO" id="hVg-k9-vhH"/>
+                        <outlet property="timerLabel" destination="wcE-u8-ZOj" id="EbK-Kp-ZDH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
