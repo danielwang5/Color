@@ -47,6 +47,8 @@ class ViewController: UIViewController {
     var counter = 30
     var timer = Timer()
     
+    var answerList = [12,8,6,29,57] //The Answers!!!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -75,15 +77,20 @@ class ViewController: UIViewController {
         plateView.addGestureRecognizer(swipeLeft)
         
         
-        answerField.text = "\(startTime)"
+        answerField.text = "\(answerList[0])"
     }
     
     func timerAction() {
+        
+        if(counter <= 0){
+            finish()
+        }
+        
         counter -= 1
         timerLabel.text = "\(counter)"
     }
 
-    var answerList = [12,8,6,29,57] //The Answers!!!
+    
     
     var imageIndex: NSInteger = 0
     var maxImages = 4 //number of images - 1
@@ -152,6 +159,14 @@ class ViewController: UIViewController {
         }
     }
     
+    func finish(){
+        /*let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "StopViewController") as! StopViewController
+        
+        //vc.resultsArray = self.resultsArray
+        self.navigationController?.pushViewController(vc, animated:true)*/
+        
+        self.performSegue(withIdentifier: "StopViewController", sender: <#T##Any?#>)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

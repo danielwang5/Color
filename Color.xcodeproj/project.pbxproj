@@ -21,6 +21,7 @@
 		4857EEEF1E30633100801CBB /* Ishihara-Plate-05-38.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEEE1E30633100801CBB /* Ishihara-Plate-05-38.jpg */; };
 		4857EEF11E37061800801CBB /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4857EEF01E37061800801CBB /* ResultData.swift */; };
 		4863AC691E43014500CDC808 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863AC681E43014500CDC808 /* Info.swift */; };
+		4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863AC6A1E43AF1700CDC808 /* StopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4857EEEE1E30633100801CBB /* Ishihara-Plate-05-38.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ishihara-Plate-05-38.jpg"; sourceTree = "<group>"; };
 		4857EEF01E37061800801CBB /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		4863AC681E43014500CDC808 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		4863AC6A1E43AF1700CDC808 /* StopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				4857EECE1E2DF25A00801CBB /* AppDelegate.swift */,
 				4857EEE61E3061FD00801CBB /* StartViewController.swift */,
 				4857EED01E2DF25A00801CBB /* ViewController.swift */,
+				4863AC6A1E43AF1700CDC808 /* StopViewController.swift */,
 				4863AC681E43014500CDC808 /* Info.swift */,
 				4857EEF01E37061800801CBB /* ResultData.swift */,
 				4857EED21E2DF25A00801CBB /* Main.storyboard */,
@@ -180,6 +183,7 @@
 				4857EED11E2DF25A00801CBB /* ViewController.swift in Sources */,
 				4857EEE71E3061FD00801CBB /* StartViewController.swift in Sources */,
 				4863AC691E43014500CDC808 /* Info.swift in Sources */,
+				4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */,
 				4857EED71E2DF25A00801CBB /* Color.xcdatamodeld in Sources */,
 				4857EECF1E2DF25A00801CBB /* AppDelegate.swift in Sources */,
 			);
