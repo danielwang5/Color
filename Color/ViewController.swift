@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     
+    @IBOutlet weak var problemLabel: UILabel!
+    
     // DATA!
     let modelName = UIDevice.current.modelName
     let brightness = UIScreen.main.brightness
@@ -48,6 +50,9 @@ class ViewController: UIViewController {
     var timer = Timer()
     
     var answerList = [12,8,6,29,57] //The Answers!!!
+    
+    var imageIndex: NSInteger = 0
+    var maxImages = 4 //number of images - 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,11 +83,14 @@ class ViewController: UIViewController {
         
         
         answerField.text = "\(answerList[0])"
+        
+        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
     }
     
     func timerAction() {
         
         if(counter <= 0){
+            timer.invalidate()
             finish()
         }
         
@@ -92,8 +100,7 @@ class ViewController: UIViewController {
 
     
     
-    var imageIndex: NSInteger = 0
-    var maxImages = 4 //number of images - 1
+    
 
     @IBAction func submitAnswer(_ sender: UITextField) {
         let answer = Int(sender.text!)
@@ -103,11 +110,9 @@ class ViewController: UIViewController {
         
         results?.ans["a\(imageIndex)"] = answer!
         results?.saveAnswers()
+
         
-        
-        //ResultData().saveAnswer(imageIndex, answer: answer!)
-        
-        if(answer == answerList[imageIndex]){
+        /*if(answer == answerList[imageIndex]){
             let alertController = UIAlertController(title: "Correct!", message:
                 "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
@@ -120,9 +125,37 @@ class ViewController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
-        }
+        }*/
+        
+        goForward()
     }
     
+    
+    func goBack(){
+        // decrease index first
+        imageIndex -= 1
+        
+        // check if index is in range
+        if imageIndex < 0 {
+            imageIndex = maxImages
+        }
+        plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+        
+        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+    }
+    
+    func goForward(){
+        // increase index first
+        imageIndex += 1
+        
+        // check if index is in range
+        if imageIndex > maxImages {
+            imageIndex = 0
+        }
+        plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+        
+        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+    }
     
     func swiped(_ gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -130,27 +163,13 @@ class ViewController: UIViewController {
 
                 case UISwipeGestureRecognizerDirection.right :
                     NSLog("User swiped right")
-                    
-                    // decrease index first
-                    imageIndex -= 1
-                    
-                    // check if index is in range
-                    if imageIndex < 0 {
-                        imageIndex = maxImages
-                    }
-                    plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+                    goBack()
+                
                 
                 case UISwipeGestureRecognizerDirection.left:
                     NSLog("User swiped Left")
-                    
-                    // increase index first
-                    imageIndex += 1
-
-                    // check if index is in range
-                    if imageIndex > maxImages {
-                        imageIndex = 0
-                    }
-                    plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+                    goForward()
+                
                 default:
                     break //stops the code/codes nothing.
             }
@@ -160,12 +179,12 @@ class ViewController: UIViewController {
     }
     
     func finish(){
-        /*let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "StopViewController") as! StopViewController
+        /*let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "finished") as! StopViewController
         
         //vc.resultsArray = self.resultsArray
         self.navigationController?.pushViewController(vc, animated:true)*/
         
-        self.performSegue(withIdentifier: "StopViewController", sender: <#T##Any?#>)
+        self.performSegue(withIdentifier: "finished", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
