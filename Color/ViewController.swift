@@ -44,13 +44,13 @@ class ViewController: UIViewController {
     // DATA!
     let modelName = UIDevice.current.modelName
     let brightness = UIScreen.main.brightness
-    let startTime = Date().timeIntervalSince1970
     
     var results: ResultData2 = ResultData2() //ResultData?
     //var currArray:[Int] = [0,0,0,0,0]
     
     //Timer 
-    var counter = 30
+    var startTime:Int = 3000 //in centiseconds
+    var counter:Int
     var timer = Timer()
     
      //The Answers!!!
@@ -66,7 +66,9 @@ class ViewController: UIViewController {
         //currArray = (results?.ans)!
         
         //setup timer
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        
+        counter = startTime
         
         
         //results = ResultData2()
@@ -100,7 +102,7 @@ class ViewController: UIViewController {
         }
         
         counter -= 1
-        timerLabel.text = "\(counter)"
+        timerLabel.text = "\(Double(counter)/100)"
     }
 
     
@@ -110,29 +112,14 @@ class ViewController: UIViewController {
     @IBAction func submitAnswer(_ sender: UITextField) {
         let answer = Int(sender.text!)
         
+        var timeElapsed:Double = Double(startTime - counter)/100
         
-        //currArray[imageIndex] = answer!
+        results.setAns(info: SubmittedData(orderinGam: nthQuestion,
+                                           quesId: imageIndex,
+                                           submittedAns: answer!,
+                                           timeElapse: timeElapsed
+                                        ))
         
-        results.setAns(info: SubmittedData(orderinGam: nthQuestion, quesId: imageIndex,submittedAns: answer!))
-        
-        //results?.ans["a\(imageIndex)"] = answer!
-        //results?.saveAnswers()
-
-        
-        /*if(answer == answerList[imageIndex]){
-            let alertController = UIAlertController(title: "Correct!", message:
-                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-        }
-        else{
-            let alertController = UIAlertController(title: "Incorrect.", message:
-                "The answer is \(answerList[imageIndex])", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-        }*/
         
         goForward()
         

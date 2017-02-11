@@ -19,13 +19,15 @@ struct SubmittedData{
     let submittedAnswer: Int
     let orderInGame: Int
     let correct: Bool
+    let timeElapsed: Double
     
-    init(orderinGam: Int, quesId: Int, submittedAns: Int) {
+    init(orderinGam: Int, quesId: Int, submittedAns: Int, timeElapse: Double) {
         questionId = quesId
         submittedAnswer = submittedAns
         orderInGame = orderinGam
         correctAnswer = answerList[quesId]
         correct = answerList[quesId] == submittedAns
+        timeElapsed = timeElapse
     }
 }
 
