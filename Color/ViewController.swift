@@ -11,7 +11,7 @@
 /*DATABASE
 
  Whos playing (phone id)
- Question #
+ Quevaron #
  start of game (timestamp)
  nth plate tested (timestamp)
  *type of phone (apple, samsung, etc)
@@ -28,6 +28,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     @IBOutlet weak var plateView: UIImageView!
 
@@ -42,15 +46,16 @@ class ViewController: UIViewController {
     let brightness = UIScreen.main.brightness
     let startTime = Date().timeIntervalSince1970
     
-    var results: ResultData?
+    var results: ResultData2 = ResultData2() //ResultData?
     //var currArray:[Int] = [0,0,0,0,0]
     
     //Timer 
     var counter = 30
     var timer = Timer()
     
-    var answerList = [12,8,6,29,57] //The Answers!!!
+     //The Answers!!!
     
+    var nthQuestion = 0
     var imageIndex: NSInteger = 0
     var maxImages = 4 //number of images - 1
     
@@ -64,11 +69,11 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         
         
-        results = ResultData(answer:0)
+        //results = ResultData2()
         
         plateView.image = UIImage(named: "plate1")
         answerField.keyboardType = UIKeyboardType.decimalPad
-        answerField.text = "\((results?.ans["a\(0)"])!)"
+        //answerField.text = "\((results.getAns("a\(0)"))!)"
         
         plateView.isUserInteractionEnabled = true//so that image will move
         
@@ -82,7 +87,7 @@ class ViewController: UIViewController {
         plateView.addGestureRecognizer(swipeLeft)
         
         
-        answerField.text = "\(answerList[0])"
+        answerField.text = "" //"\(answerList[0])"
         
         problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
     }
@@ -108,8 +113,10 @@ class ViewController: UIViewController {
         
         //currArray[imageIndex] = answer!
         
-        results?.ans["a\(imageIndex)"] = answer!
-        results?.saveAnswers()
+        results.setAns(info: SubmittedData(orderinGam: nthQuestion, quesId: imageIndex,submittedAns: answer!))
+        
+        //results?.ans["a\(imageIndex)"] = answer!
+        //results?.saveAnswers()
 
         
         /*if(answer == answerList[imageIndex]){
@@ -128,6 +135,8 @@ class ViewController: UIViewController {
         }*/
         
         goForward()
+        
+        answerField.text = ""
     }
     
     
@@ -150,7 +159,8 @@ class ViewController: UIViewController {
         
         // check if index is in range
         if imageIndex > maxImages {
-            imageIndex = 0
+            //imageIndex = 0
+            finish()
         }
         plateView.image = UIImage(named: "plate\(imageIndex + 1)")
         
@@ -174,25 +184,30 @@ class ViewController: UIViewController {
                     break //stops the code/codes nothing.
             }
 
-            answerField.text = "\((results?.ans["a\(imageIndex)"])!)"
+            //answerField.text = "\(results.data[imageIndex].correctAnswer)"
         }
     }
     
     func finish(){
-        /*let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "finished") as! StopViewController
+        //let vc = StopViewController()
+            //UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "finished") as! StopViewController
         
-        //vc.resultsArray = self.resultsArray
-        self.navigationController?.pushViewController(vc, animated:true)*/
+        //vc.results = (self.results.data)
+        //self.navigationController?.pushViewController(vc, animated:true)
         
-        self.performSegue(withIdentifier: "finished", sender: self)
+        
+        self.performSegue(withIdentifier: "finished", sender: self.results.data)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! StopViewController
+        controller.results = sender as! [SubmittedData]
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
     
 }
 

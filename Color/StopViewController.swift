@@ -10,10 +10,24 @@ import UIKit
 
 class StopViewController: UIViewController {
     
+    @IBOutlet weak var finalScoreLabel: UILabel!
+    
+    var results: [SubmittedData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var numberCorrect = 0
+        
+        for item in results{
+            if(item.correct){
+                numberCorrect += 1
+            }
+        }
+        
+        
+        finalScoreLabel.text = "\(numberCorrect) correct!"
     }
     
     override func didReceiveMemoryWarning() {

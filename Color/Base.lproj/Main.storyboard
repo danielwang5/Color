@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-aO-oxl">
-                                <rect key="frame" x="170.5" y="285" width="34" height="30"/>
+                                <rect key="frame" x="283" y="285" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7mb-dT-dtx"/>
@@ -119,15 +119,40 @@
         <!--Stop View Controller-->
         <scene sceneID="Nji-mN-xwz">
             <objects>
-                <viewController id="poL-iH-GtU" customClass="StopViewController" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nXC-PX-v0g">
+                <viewController id="poL-iH-GtU" customClass="StopViewController" customModule="Color" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1gp-s7-J4y"/>
+                        <viewControllerLayoutGuide type="bottom" id="YoW-J7-BUi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fHM-da-Pu1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <segue destination="zyR-4m-f11" kind="show" id="Va5-hF-0c4"/>
-                        </connections>
-                    </button>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeO-Ts-ErC">
+                                <rect key="frame" x="149" y="318" width="76" height="30"/>
+                                <state key="normal" title="Main Menu"/>
+                                <connections>
+                                    <segue destination="zyR-4m-f11" kind="show" identifier="backToMenu" id="B6X-PY-yms"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpT-K0-akb">
+                                <rect key="frame" x="165" y="237" width="44.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MeO-Ts-ErC" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="E5r-hy-pVt"/>
+                            <constraint firstItem="WpT-K0-akb" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="Ien-f0-a1P"/>
+                            <constraint firstItem="MeO-Ts-ErC" firstAttribute="top" secondItem="WpT-K0-akb" secondAttribute="bottom" constant="60" id="NC5-B0-1cq"/>
+                            <constraint firstItem="MeO-Ts-ErC" firstAttribute="centerY" secondItem="fHM-da-Pu1" secondAttribute="centerY" id="fbW-4m-eJW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="finalScoreLabel" destination="WpT-K0-akb" id="zpY-Cv-DV2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1a-ff-P8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

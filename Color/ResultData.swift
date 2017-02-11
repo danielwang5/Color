@@ -6,7 +6,9 @@
 //  Copyright © 2017 DanielW. All rights reserved.
 //
 
-import Foundation
+//PERSISTENT
+
+/*import Foundation
 import CoreData
 import UIKit
 
@@ -79,7 +81,7 @@ class ResultData: NSObject, NSCoding {
     }
 }
 
-/*class ResultData{
+class ResultData{
     
     func saveAnswer(_ q:Int, answer:Int) {
         
