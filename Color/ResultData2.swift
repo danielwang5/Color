@@ -14,20 +14,40 @@ import UIKit
 let answerList = [12,8,6,29,57]
 
 struct SubmittedData{
-    let questionId: Int
-    let correctAnswer: Int
-    let submittedAnswer: Int
-    let orderInGame: Int
-    let correct: Bool
-    let timeElapsed: Double
+    var questionId: Int = -1
+    var correctAnswer: Int = -1
+    var submittedAnswer: Int = -1
+    var orderInGame: Int = -1
+    var correct: Bool = false
+    var timeElapsed: Double = -1.0
+    var phoneInfo: PhoneData = PhoneData()
     
-    init(orderinGam: Int, quesId: Int, submittedAns: Int, timeElapse: Double) {
+    init(phoneInf: PhoneData, orderinGam: Int, quesId: Int, submittedAns: Int, timeElapse: Double) {
+        phoneInfo = phoneInf
         questionId = quesId
         submittedAnswer = submittedAns
         orderInGame = orderinGam
         correctAnswer = answerList[quesId]
         correct = answerList[quesId] == submittedAns
         timeElapsed = timeElapse
+    }
+    
+    init(){
+        
+    }
+}
+
+struct PhoneData{
+    var model: String = "Model Unknown"
+    var brightness: Double = -1.0
+    
+    init(mod: String, bright:Double){
+        model = mod
+        brightness = bright
+    }
+    
+    init(){
+        
     }
 }
 

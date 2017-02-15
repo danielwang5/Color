@@ -12,14 +12,14 @@
 
  Whos playing (phone id)
  Quevaron #
- start of game (timestamp)
+ *start of game (timestamp)
  nth plate tested (timestamp)
  *type of phone (apple, samsung, etc)
  *settings (brightness, etc)
  custom colors (number, background)
- number they put
- correct answer
- right or wrong (bool)
+ *number they put
+ *correct answer
+ *right or wrong (bool)
  user data (country, age, sex, location, etc)
  
  
@@ -43,14 +43,16 @@ class ViewController: UIViewController {
     
     // DATA!
     let modelName = UIDevice.current.modelName
-    let brightness = UIScreen.main.brightness
+    let brightness = Double(UIScreen.main.brightness)
+    
+    var phoneInfo = PhoneData()
     
     var results: ResultData2 = ResultData2() //ResultData?
     //var currArray:[Int] = [0,0,0,0,0]
     
     //Timer 
     var startTime:Int = 3000 //in centiseconds
-    var counter:Int
+    var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
     
      //The Answers!!!
@@ -63,7 +65,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //currArray = (results?.ans)!
+        //phone info
+        phoneInfo = PhoneData(mod: modelName, bright: brightness)
         
         //setup timer
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
@@ -114,7 +117,9 @@ class ViewController: UIViewController {
         
         var timeElapsed:Double = Double(startTime - counter)/100
         
-        results.setAns(info: SubmittedData(orderinGam: nthQuestion,
+        results.setAns(info: SubmittedData(
+                                           phoneInf: phoneInfo,
+                                           orderinGam: nthQuestion,
                                            quesId: imageIndex,
                                            submittedAns: answer!,
                                            timeElapse: timeElapsed

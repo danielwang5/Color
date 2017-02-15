@@ -27,7 +27,7 @@ class StopViewController: UIViewController {
         }
         
         
-        finalScoreLabel.text = "\(numberCorrect) correct!"
+        finalScoreLabel.text = results[0].phoneInfo.model //"\(numberCorrect) correct!"
     }
     
     override func didReceiveMemoryWarning() {
