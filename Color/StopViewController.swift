@@ -6,6 +6,8 @@
 //  Copyright © 2017 DanielW. All rights reserved.
 //
 
+import Foundation
+import CoreData
 import UIKit
 
 class StopViewController: UIViewController {
@@ -27,7 +29,16 @@ class StopViewController: UIViewController {
         }
         
         
-        finalScoreLabel.text = results[0].phoneInfo.model //"\(numberCorrect) correct!"
+        //finalScoreLabel.text = results[0].phoneInfo.model //"\(numberCorrect) correct!"
+        
+        
+        for i in 0..<results.count{
+            ResultData().saveAnswer(submitted: results[i])
+        }
+        
+        //TEST: Fetch User Data
+        
+        finalScoreLabel.text = "\(ResultData().fetchAnswer().count)"
     }
     
     override func didReceiveMemoryWarning() {

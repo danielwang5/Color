@@ -8,12 +8,12 @@
 
 //PERSISTENT
 
-/*import Foundation
+import Foundation
 import CoreData
 import UIKit
 
 
-class ResultData: NSObject, NSCoding {
+/*class ResultData: NSObject, NSCoding {
     
     
     //MARK: Properties
@@ -79,11 +79,16 @@ class ResultData: NSObject, NSCoding {
         print("LOADED!")
         return NSKeyedUnarchiver.unarchiveObject(withFile: ResultData.ArchiveURL.path) as? [String:Int]
     }
-}
+}*/
 
 class ResultData{
     
-    func saveAnswer(_ q:Int, answer:Int) {
+    func saveAnswer(submitted:SubmittedData) {
+        
+        /*guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }*/
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -94,7 +99,15 @@ class ResultData{
         let person = NSManagedObject(entity: entity!,
                                      insertInto: managedContext)
 
-        person.setValue(answer, forKey: "a\(q+1)")
+        person.setValue(submitted.correct, forKey: "correct")
+        person.setValue(submitted.correctAnswer, forKey: "correctAnswer")
+        person.setValue(submitted.orderInGame, forKey: "orderInGame")
+        person.setValue(submitted.questionId, forKey: "questionId")
+        person.setValue(submitted.submittedAnswer, forKey: "submittedAnswer")
+        person.setValue(submitted.timeElapsed, forKey: "timeElapsed")
+        person.setValue(submitted.phoneInfo.brightness, forKey: "brightness")
+        person.setValue(submitted.phoneInfo.model, forKey: "model")
+
         
         do {
             print("AJGDJGDAGDGAKJDKAJDKHA")
@@ -102,10 +115,9 @@ class ResultData{
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
->>>>>>> CoreData
     }
     
-    func fetchAnswer(_ q:Int) -> Int{
+    func fetchAnswer() -> [NSManagedObject]{
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -113,12 +125,15 @@ class ResultData{
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "Results")
         
+        var results:[NSManagedObject] = []
+        
         do {
-            var people = try managedContext.fetch(fetchRequest)
-            return people.count
+            results = try managedContext.fetch(fetchRequest)
+            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        return 0
+        return results
     }
-}*/
+    
+}

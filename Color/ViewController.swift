@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         counter = startTime
         
         
-        //results = ResultData2()
+        results = ResultData2()
         
         plateView.image = UIImage(named: "plate1")
         answerField.keyboardType = UIKeyboardType.decimalPad
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
     
 
     @IBAction func submitAnswer(_ sender: UITextField) {
-        let answer = Int(sender.text!)
+        let answer = Int(sender.text!)!
         
         var timeElapsed:Double = Double(startTime - counter)/100
         
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
                                            phoneInf: phoneInfo,
                                            orderinGam: nthQuestion,
                                            quesId: imageIndex,
-                                           submittedAns: answer!,
+                                           submittedAns: answer,
                                            timeElapse: timeElapsed
                                         ))
         
