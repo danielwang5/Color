@@ -38,7 +38,9 @@ class StopViewController: UIViewController {
         
         //TEST: Fetch User Data
         
-        finalScoreLabel.text = "\(ResultData().fetchAnswer().count)"
+        let fetchedData = ResultData().fetchAnswer()
+        
+        finalScoreLabel.text = "\(fetchedData[fetchedData.count-1].value(forKey: "submittedAnswer"))"
     }
     
     override func didReceiveMemoryWarning() {
