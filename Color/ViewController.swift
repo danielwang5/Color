@@ -112,8 +112,8 @@ class ViewController: UIViewController {
     
     
 
-    @IBAction func submitAnswer(_ sender: UITextField) {
-        let answer = Int(sender.text!)!
+    @IBAction func submitAnswer(_ sender: UIButton) {
+        let answer = Int(answerField.text!)!
         
         var timeElapsed:Double = Double(startTime - counter)/100
         

@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-aO-oxl">
-                                <rect key="frame" x="283" y="285" width="34" height="30"/>
+                                <rect key="frame" x="170.5" y="285" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7mb-dT-dtx"/>
@@ -62,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KVW-Ss-V7G">
-                                <rect key="frame" x="67.5" y="148.5" width="240" height="371"/>
+                                <rect key="frame" x="67.5" y="40" width="240" height="371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTH-l1-EA4">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
@@ -83,24 +83,37 @@
                                             <constraint firstAttribute="height" constant="240" id="jUH-Oz-5w9"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="v1Z-q3-4Km">
                                         <rect key="frame" x="0.0" y="341" width="240" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="submitAnswer:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="k78-ka-5Df"/>
-                                        </connections>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="submitAnswer:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="k78-ka-5Df"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ko-xo-L5w">
+                                                <rect key="frame" x="203" y="0.0" width="37" height="30"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="submitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddy-c8-FSQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="bkt-3c-R9W"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="bkt-3c-R9W"/>
                                     <constraint firstAttribute="width" constant="240" id="oIu-Ff-TLw"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="KVW-Ss-V7G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xDk-2t-m0X"/>
+                            <constraint firstItem="KVW-Ss-V7G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="41w-hZ-CAa"/>
+                            <constraint firstItem="KVW-Ss-V7G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" priority="10" id="xDk-2t-m0X"/>
                             <constraint firstItem="KVW-Ss-V7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yeO-5N-fHV"/>
                         </constraints>
                     </view>
@@ -141,12 +154,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Ry-k4a">
+                                <rect key="frame" x="151.5" y="356" width="72" height="30"/>
+                                <state key="normal" title="Send Data"/>
+                                <connections>
+                                    <action selector="sendEmailButtonTappedWithSender:" destination="poL-iH-GtU" eventType="touchUpInside" id="Lse-U4-oaE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MeO-Ts-ErC" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="E5r-hy-pVt"/>
+                            <constraint firstItem="5pZ-Ry-k4a" firstAttribute="top" secondItem="MeO-Ts-ErC" secondAttribute="bottom" constant="8" id="HOR-UG-rM9"/>
                             <constraint firstItem="WpT-K0-akb" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="Ien-f0-a1P"/>
                             <constraint firstItem="MeO-Ts-ErC" firstAttribute="top" secondItem="WpT-K0-akb" secondAttribute="bottom" constant="60" id="NC5-B0-1cq"/>
+                            <constraint firstItem="5pZ-Ry-k4a" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="dSi-su-f5O"/>
                             <constraint firstItem="MeO-Ts-ErC" firstAttribute="centerY" secondItem="fHM-da-Pu1" secondAttribute="centerY" id="fbW-4m-eJW"/>
                         </constraints>
                     </view>

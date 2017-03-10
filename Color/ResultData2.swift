@@ -32,6 +32,11 @@ struct SubmittedData{
         timeElapsed = timeElapse
     }
     
+    func toString() -> String{
+        return String(questionId)+","+String(correctAnswer)+","+String(submittedAnswer)+","+String(orderInGame)+","+String(correctAnswer)+","+String(correct)+","+String(timeElapsed)
+        
+    }
+    
     init(){
         
     }
