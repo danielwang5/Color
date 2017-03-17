@@ -26,6 +26,7 @@
  */
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
 
@@ -59,7 +60,7 @@ class ViewController: UIViewController {
     
     var nthQuestion = 0
     var imageIndex: NSInteger = 0
-    var maxImages = 4 //number of images - 1
+    var maxImages = 5 //number of images - 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,9 @@ class ViewController: UIViewController {
         
         //phone info
         phoneInfo = PhoneData(mod: modelName, bright: brightness)
+        
+        //randomize imageIndex
+        imageIndex = randInt(upper: maxImages)
         
         //setup timer
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
@@ -76,7 +80,7 @@ class ViewController: UIViewController {
         
         results = ResultData2()
         
-        plateView.image = UIImage(named: "plate1")
+        plateView.image = UIImage(named: "plate\(imageIndex+1)")
         answerField.keyboardType = UIKeyboardType.decimalPad
         //answerField.text = "\((results.getAns("a\(0)"))!)"
         
@@ -147,13 +151,13 @@ class ViewController: UIViewController {
     
     func goForward(){
         // increase index first
-        imageIndex += 1
+        imageIndex = randInt(upper: maxImages)
         
         // check if index is in range
-        if imageIndex > maxImages {
+        //if imageIndex > maxImages {
             //imageIndex = 0
-            finish()
-        }
+            //finish()
+        //}
         plateView.image = UIImage(named: "plate\(imageIndex + 1)")
         
         problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
@@ -199,6 +203,11 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func randInt(upper: Int) -> Int{ //random integer from 0 to upper-1
+        let k: Int = Int(arc4random_uniform(UInt32(upper)))
+        return k
     }
     
 }
