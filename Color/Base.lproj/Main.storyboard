@@ -34,11 +34,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-LO-2e8">
+                                <rect key="frame" x="139" y="365" width="97" height="30"/>
+                                <state key="normal" title="Drawing Tests"/>
+                                <connections>
+                                    <segue destination="yUZ-0f-uOB" kind="show" id="pe8-UB-KTH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" constant="112.5" id="Gel-eM-ClO"/>
+                            <constraint firstItem="cUg-LO-2e8" firstAttribute="top" secondItem="WIZ-aO-oxl" secondAttribute="bottom" constant="50" id="9Kz-AX-fJw"/>
+                            <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Gel-eM-ClO"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Hpq-Rs-vXE"/>
+                            <constraint firstItem="cUg-LO-2e8" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="QLT-d4-6yy"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="top" secondItem="Pm5-N7-EBz" secondAttribute="bottom" constant="64" id="QQn-n4-2hZ"/>
                             <constraint firstItem="Pm5-N7-EBz" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="ZxF-fg-MSO"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerY" secondItem="KaA-r0-dPw" secondAttribute="centerY" constant="-33.5" id="yiY-cl-asF"/>
@@ -48,6 +57,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSW-94-rLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="-457"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="21g-G8-1Vv">
+            <objects>
+                <viewController id="yUZ-0f-uOB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="euE-aU-CW5"/>
+                        <viewControllerLayoutGuide type="bottom" id="4GF-B0-i2r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wc0-BM-1F3" customClass="DrawingTest">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3R9-5a-yge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="-796"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

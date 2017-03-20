@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     // DATA!
     let modelName = UIDevice.current.modelName
     let brightness = Double(UIScreen.main.brightness)
+    let phoneId:String = UIDevice.current.identifierForVendor!.uuidString
     
     var phoneInfo = PhoneData()
     
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //phone info
-        phoneInfo = PhoneData(mod: modelName, bright: brightness)
+        phoneInfo = PhoneData(id:phoneId, mod: modelName, bright: brightness)
         
         //randomize imageIndex
         imageIndex = randInt(upper: maxImages)

@@ -33,7 +33,7 @@ struct SubmittedData{
     }
     
     func toString() -> String{
-        return String(questionId)+","+String(correctAnswer)+","+String(submittedAnswer)+","+String(orderInGame)+","+String(correctAnswer)+","+String(correct)+","+String(timeElapsed)
+        return String(questionId)+","+String(correctAnswer)+","+String(submittedAnswer)+","+String(orderInGame)+","+String(correctAnswer)+","+String(correct)+","+String(timeElapsed)+","+String(phoneInfo.phoneId)+","+String(phoneInfo.model)+","+String(phoneInfo.brightness)
         
     }
     
@@ -45,10 +45,12 @@ struct SubmittedData{
 struct PhoneData{
     var model: String = "Model Unknown"
     var brightness: Double = -1.0
+    var phoneId: String = "Phone Id Unknown"
     
-    init(mod: String, bright:Double){
+    init(id: String, mod: String, bright:Double){
         model = mod
         brightness = bright
+        phoneId = id
     }
     
     init(){

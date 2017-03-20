@@ -105,6 +105,7 @@ class ResultData{
         person.setValue(submitted.questionId, forKey: "questionId")
         person.setValue(submitted.submittedAnswer, forKey: "submittedAnswer")
         person.setValue(submitted.timeElapsed, forKey: "timeElapsed")
+        person.setValue(submitted.phoneInfo.phoneId, forKey: "phoneId")
         person.setValue(submitted.phoneInfo.brightness, forKey: "brightness")
         person.setValue(submitted.phoneInfo.model, forKey: "model")
 
@@ -134,6 +135,28 @@ class ResultData{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         return results
+    }
+    
+    func toString() -> String{
+        let results = fetchAnswer()
+        var o:String = ""
+        
+        
+        
+        for item in results{
+            o += (item.value(forKey: "questionId")! as! String) + ","
+            o += (item.value(forKey: "correctAnswer")! as! String) + ","
+            o += (item.value(forKey: "qsubmittedAnswer")! as! String) + ","
+            o += (item.value(forKey: "orderInGame")! as! String) + ","
+            o += (item.value(forKey: "correctAnswer")! as! String) + ","
+            o += (item.value(forKey: "correct")! as! String) + ","
+            o += (item.value(forKey: "timeElapsed")! as! String) + ","
+            o += (item.value(forKey: "phoneId")! as! String) + ","
+            o += (item.value(forKey: "model")! as! String) + ","
+            o += (item.value(forKey: "brightness")! as! String) + "\n"
+        }
+        
+        return o
     }
     
 }

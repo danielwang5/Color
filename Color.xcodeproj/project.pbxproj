@@ -22,6 +22,7 @@
 		4857EEF11E37061800801CBB /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4857EEF01E37061800801CBB /* ResultData.swift */; };
 		4863AC691E43014500CDC808 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863AC681E43014500CDC808 /* Info.swift */; };
 		4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863AC6A1E43AF1700CDC808 /* StopViewController.swift */; };
+		487475E91E7F707C00F79086 /* DrawingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487475E81E7F707C00F79086 /* DrawingTest.swift */; };
 		489292F61E4D017800808879 /* ResultData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489292F51E4D017800808879 /* ResultData2.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		4857EEF01E37061800801CBB /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		4863AC681E43014500CDC808 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		4863AC6A1E43AF1700CDC808 /* StopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopViewController.swift; sourceTree = "<group>"; };
+		487475E81E7F707C00F79086 /* DrawingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTest.swift; sourceTree = "<group>"; };
 		489292F51E4D017800808879 /* ResultData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				489292F51E4D017800808879 /* ResultData2.swift */,
 				4857EEF01E37061800801CBB /* ResultData.swift */,
 				4857EED21E2DF25A00801CBB /* Main.storyboard */,
+				487475E81E7F707C00F79086 /* DrawingTest.swift */,
 				4857EED81E2DF25A00801CBB /* Assets.xcassets */,
 				4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */,
 				4857EEDD1E2DF25A00801CBB /* Info.plist */,
@@ -191,6 +194,7 @@
 				4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */,
 				4857EED71E2DF25A00801CBB /* Color.xcdatamodeld in Sources */,
 				4857EECF1E2DF25A00801CBB /* AppDelegate.swift in Sources */,
+				487475E91E7F707C00F79086 /* DrawingTest.swift in Sources */,
 				489292F61E4D017800808879 /* ResultData2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -40,9 +40,10 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
         //TEST: Fetch User Data
         
-        let fetchedData = ResultData().fetchAnswer()
+        //let fetchedData = ResultData().fetchAnswer()
         
-        finalScoreLabel.text = "\(fetchedData[fetchedData.count-1].value(forKey: "submittedAnswer")!)"
+        finalScoreLabel.text = ResultData().toString()
+        //"\(fetchedData[fetchedData.count-1].value(forKey: "submittedAnswer")!)"
         
     }
     
@@ -62,9 +63,11 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
         
         //ADD RESULT DATA TO MESSAGE BODY
-        for result in results{
+        /*for result in results{
             messageBody += result.toString() + "\n"
-        }
+        }*/
+        
+        messageBody = ResultData().toString()
         
         mailComposerVC.setToRecipients(["dwq@mit.edu"])
         mailComposerVC.setSubject("Color Test Results")
