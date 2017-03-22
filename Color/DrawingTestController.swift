@@ -1,16 +1,15 @@
 //
-//  DrawingTest.swift
+//  DrawingTestController.swift
 //  Color
 //
 //  Created by James Wang on 3/19/17.
-//  Copyright © 2017 DanielW. All rights reserved.
-//
+//  Copyright © 2017 DanielW. All rights reserimport Foundation
 
 import Foundation
 import UIKit
 
 
-class DrawingTest: UIView {
+class DrawingTestController: UIView {
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()

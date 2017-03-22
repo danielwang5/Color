@@ -139,24 +139,28 @@ class ResultData{
     
     func toString() -> String{
         let results = fetchAnswer()
-        var o:String = ""
+        var out:String = ""
         
         
+        var keyList = ["questionId","correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","phoneId","model","brightness"]
         
         for item in results{
-            o += (item.value(forKey: "questionId")! as! String) + ","
-            o += (item.value(forKey: "correctAnswer")! as! String) + ","
-            o += (item.value(forKey: "qsubmittedAnswer")! as! String) + ","
+            for key in keyList{
+                out += "\(item.value(forKey: key)!),"
+            }
+            
+            /*o += (item.value(forKey: "correctAnswer")! as! String) + ","
+            o += (item.value(forKey: "submittedAnswer")! as! String) + ","
             o += (item.value(forKey: "orderInGame")! as! String) + ","
             o += (item.value(forKey: "correctAnswer")! as! String) + ","
             o += (item.value(forKey: "correct")! as! String) + ","
             o += (item.value(forKey: "timeElapsed")! as! String) + ","
             o += (item.value(forKey: "phoneId")! as! String) + ","
             o += (item.value(forKey: "model")! as! String) + ","
-            o += (item.value(forKey: "brightness")! as! String) + "\n"
+            o += (item.value(forKey: "brightness")! as! String) + "\n"*/
         }
         
-        return o
+        return out
     }
     
 }
