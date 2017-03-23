@@ -24,6 +24,8 @@
 		4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863AC6A1E43AF1700CDC808 /* StopViewController.swift */; };
 		487475EB1E7F79F900F79086 /* DrawingTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487475EA1E7F79F900F79086 /* DrawingTestController.swift */; };
 		489292F61E4D017800808879 /* ResultData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489292F51E4D017800808879 /* ResultData2.swift */; };
+		48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F981C81E833F800050C180 /* DrawingTestView.swift */; };
+		48F981CD1E845F0F0050C180 /* KDTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F981CC1E845F0F0050C180 /* KDTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		4863AC6A1E43AF1700CDC808 /* StopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopViewController.swift; sourceTree = "<group>"; };
 		487475EA1E7F79F900F79086 /* DrawingTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestController.swift; sourceTree = "<group>"; };
 		489292F51E4D017800808879 /* ResultData2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData2.swift; sourceTree = "<group>"; };
+		48F981C81E833F800050C180 /* DrawingTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestView.swift; sourceTree = "<group>"; };
+		48F981CC1E845F0F0050C180 /* KDTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,16 +86,18 @@
 				4857EECE1E2DF25A00801CBB /* AppDelegate.swift */,
 				4857EEE61E3061FD00801CBB /* StartViewController.swift */,
 				487475EA1E7F79F900F79086 /* DrawingTestController.swift */,
+				48F981C81E833F800050C180 /* DrawingTestView.swift */,
 				4857EED01E2DF25A00801CBB /* ViewController.swift */,
 				4863AC6A1E43AF1700CDC808 /* StopViewController.swift */,
-				489292F51E4D017800808879 /* ResultData2.swift */,
-				4857EEF01E37061800801CBB /* ResultData.swift */,
 				4857EED21E2DF25A00801CBB /* Main.storyboard */,
 				4857EED81E2DF25A00801CBB /* Assets.xcassets */,
 				4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */,
 				4857EEDD1E2DF25A00801CBB /* Info.plist */,
 				4857EED51E2DF25A00801CBB /* Color.xcdatamodeld */,
+				4857EEF01E37061800801CBB /* ResultData.swift */,
+				489292F51E4D017800808879 /* ResultData2.swift */,
 				4863AC681E43014500CDC808 /* Info.swift */,
+				48F981CC1E845F0F0050C180 /* KDTree.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -189,7 +195,9 @@
 			files = (
 				487475EB1E7F79F900F79086 /* DrawingTestController.swift in Sources */,
 				4857EEF11E37061800801CBB /* ResultData.swift in Sources */,
+				48F981CD1E845F0F0050C180 /* KDTree.swift in Sources */,
 				4857EED11E2DF25A00801CBB /* ViewController.swift in Sources */,
+				48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */,
 				4857EEE71E3061FD00801CBB /* StartViewController.swift in Sources */,
 				4863AC691E43014500CDC808 /* Info.swift in Sources */,
 				4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */,
