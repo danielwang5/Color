@@ -24,7 +24,7 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
         var numberCorrect = 0
         
-        for item in results{
+        for item in results{ 
             if(item.correct){
                 numberCorrect += 1
             }
