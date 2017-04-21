@@ -33,7 +33,9 @@ class DrawingTestView: UIView{
         /*******   CIRCLE GENERATION BEGIN   *******/
         
         
-        let MIN_R:Double = 1;
+        let CIRCLE_ITERATIONS:Int = 5000
+        
+        let MIN_R:Double = 5;
         let MAX_R:Double = 12;
         
         // canvas size
@@ -84,7 +86,7 @@ class DrawingTestView: UIView{
         
         func show(circ:Circle){
             //fill(random(0, 255)); RANDOM COLOR??
-            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius*2), color: UIColor.blue.cgColor))
+            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius), color: UIColor.blue.cgColor))
         }
         
         // index to coordinate
@@ -235,7 +237,7 @@ class DrawingTestView: UIView{
                 }
             }
             
-            for i in 1...200 {
+            for i in 1...CIRCLE_ITERATIONS {
                 generate()
             }
         }
