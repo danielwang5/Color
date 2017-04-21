@@ -33,7 +33,8 @@ class DrawingTestView: UIView{
         /*******   CIRCLE GENERATION BEGIN   *******/
         
         
-        let CIRCLE_ITERATIONS:Int = 5000
+        let CIRCLE_ITERATIONS:Int = 10000
+        let SPACING:Double = 0.5
         
         let MIN_R:Double = 5;
         let MAX_R:Double = 12;
@@ -86,7 +87,7 @@ class DrawingTestView: UIView{
         
         func show(circ:Circle){
             //fill(random(0, 255)); RANDOM COLOR??
-            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius), color: UIColor.blue.cgColor))
+            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius - SPACING), color: UIColor.blue.cgColor))
         }
         
         // index to coordinate
@@ -151,7 +152,7 @@ class DrawingTestView: UIView{
         }
         
         func getRandomDouble(min:Double, max:Double) -> Double{
-            return random01() * (max - min) + min;
+            return distribute(rand01: random01()) * (max - min) + min;
         }
         
         func random01() -> Double{
@@ -199,6 +200,10 @@ class DrawingTestView: UIView{
             // return max;
             // return random(MIN_R, max);
             return constrain(val: getRandomDouble(min: MIN_R, max: MAX_R), lower: MIN_R, upper: max);
+        }
+        
+        func distribute(rand01:Double) -> Double{
+            return 1 - rand01 * rand01
         }
         
         let SQRT:Double = 1 / sqrt(2);
