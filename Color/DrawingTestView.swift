@@ -84,7 +84,7 @@ class DrawingTestView: UIView{
         
         func show(circ:Circle){
             //fill(random(0, 255)); RANDOM COLOR??
-            createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius*2), color: UIColor.blue.cgColor)
+            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius*2), color: UIColor.blue.cgColor))
         }
         
         // index to coordinate
@@ -173,7 +173,7 @@ class DrawingTestView: UIView{
             
             // for each circle in neighbors chunks
             for i in 0..<neighbors.count{
-                for j in 0..<neighbors.count{
+                for j in 0..<neighbors[i].count{
                     
                     var circle = neighbors[i][j];
                     // distance to the circle edge
