@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     
     var nthQuestion = 0
     var imageIndex: NSInteger = 0
-    var maxImages = 5 //number of images - 1
+    var maxImages = 17 //number of images - 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
