@@ -31,7 +31,7 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         }
         
         
-        //finalScoreLabel.text = results[0].phoneInfo.model //"\(numberCorrect) correct!"
+        finalScoreLabel.text = "\(numberCorrect) correct!"
         
         
         for i in 0..<results.count{
@@ -42,7 +42,7 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
         //let fetchedData = ResultData().fetchAnswer()
         
-        finalScoreLabel.text = ResultData().toString()
+        //finalScoreLabel.text = ResultData().toString()
         //"\(fetchedData[fetchedData.count-1].value(forKey: "submittedAnswer")!)"
         
     }

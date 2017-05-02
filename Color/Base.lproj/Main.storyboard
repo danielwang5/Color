@@ -113,21 +113,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="v1Z-q3-4Km">
                                         <rect key="frame" x="0.0" y="341" width="240" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
-                                                <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="submitAnswer:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="k78-ka-5Df"/>
+                                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="editingChanged" id="XcL-Hp-fBx"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ko-xo-L5w">
-                                                <rect key="frame" x="203" y="0.0" width="37" height="30"/>
-                                                <state key="normal" title="Done"/>
-                                                <connections>
-                                                    <action selector="submitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddy-c8-FSQ"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -137,7 +130,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KVW-Ss-V7G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="41w-hZ-CAa"/>
                             <constraint firstItem="KVW-Ss-V7G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" priority="10" id="xDk-2t-m0X"/>
@@ -154,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="428"/>
+            <point key="canvasLocation" x="140" y="427.73613193403304"/>
         </scene>
         <!--Stop View Controller-->
         <scene sceneID="Nji-mN-xwz">

@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-let answerList = [12,8,6,29,57]
+let answerList = [12,8,6,29,57,5,3,15,74,2,6,97,45,5,7,16,73]
 
 struct SubmittedData{
     var questionId: Int = -1

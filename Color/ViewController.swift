@@ -57,6 +57,12 @@ class ViewController: UIViewController {
     var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
     
+    //Background
+    var oRed:Float = 0.8
+    var oGreen:Float = 0.8
+    var oBlue:Float = 0.8
+    var oAlpha:Float = 1.0
+    
      //The Answers!!!
     
     var nthQuestion = 0
@@ -66,6 +72,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //BG Color
+        self.view.backgroundColor = UIColor(colorLiteralRed: oRed, green: oGreen, blue: oBlue, alpha: oAlpha)
         
         //phone info
         phoneInfo = PhoneData(id:phoneId, mod: modelName, bright: brightness)
@@ -83,23 +93,26 @@ class ViewController: UIViewController {
         
         plateView.image = UIImage(named: "plate\(imageIndex+1)")
         answerField.keyboardType = UIKeyboardType.decimalPad
-        //answerField.text = "\((results.getAns("a\(0)"))!)"
+        
+        //focus on text field
+        answerField.becomeFirstResponder()
         
         plateView.isUserInteractionEnabled = true//so that image will move
         
         //set up gestures for swiping left and right
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
+        /*let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         plateView.addGestureRecognizer(swipeRight)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-        plateView.addGestureRecognizer(swipeLeft)
+        plateView.addGestureRecognizer(swipeLeft)*/
         
         
         answerField.text = "" //"\(answerList[0])"
         
         problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+        
     }
     
     func timerAction() {
@@ -117,23 +130,49 @@ class ViewController: UIViewController {
     
     
 
-    @IBAction func submitAnswer(_ sender: UIButton) {
+    @IBAction func checkAnswer(_ sender: UITextField) {
         let answer = Int(answerField.text!)!
         
         var timeElapsed:Double = Double(startTime - counter)/100
         
-        results.setAns(info: SubmittedData(
-                                           phoneInf: phoneInfo,
-                                           orderinGam: nthQuestion,
-                                           quesId: imageIndex,
-                                           submittedAns: answer,
-                                           timeElapse: timeElapsed
-                                        ))
+        if(answer != answerList[imageIndex] / 10){
+            results.setAns(info: SubmittedData(
+                phoneInf: phoneInfo,
+                orderinGam: nthQuestion,
+                quesId: imageIndex,
+                submittedAns: answer,
+                timeElapse: timeElapsed
+            ))
+            
+            
+            
+            
+            
+            if(answer == answerList[imageIndex]){ // correct
+                flashColor(red: oRed - 0.3,green: oGreen + 0.1,blue: oBlue - 0.2,alpha: oAlpha)
+                print("CORRECT")
+            }
+            else{ // incorrect
+                flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
+                print("WRONG")
+                print(answer)
+                print(answerList[imageIndex])
+            }
+            
+            goForward()
+            
+            answerField.text = ""
+            
+            
+        }// incomplete correct answer
         
         
-        goForward()
-        
-        answerField.text = ""
+    }
+    
+    func flashColor(red:Float, green:Float, blue:Float, alpha:Float) {
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.autoreverse], animations: {
+            self.view.backgroundColor = UIColor(colorLiteralRed: red, green: green, blue: blue, alpha: alpha)
+        }, completion:{finished in self.view.backgroundColor = UIColor(colorLiteralRed: self.oRed, green: self.oGreen, blue: self.oBlue, alpha: self.oAlpha)})
     }
     
     
