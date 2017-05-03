@@ -37,8 +37,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var plateView: UIImageView!
 
     @IBOutlet weak var answerField: UITextField!
-    
-    @IBOutlet weak var timerLabel: UILabel!
+
+    @IBOutlet weak var timerBar: UIProgressView!
     
     @IBOutlet weak var problemLabel: UILabel!
     
@@ -123,11 +123,14 @@ class ViewController: UIViewController {
         }
         
         counter -= 1
-        timerLabel.text = "\(Double(counter)/100)"
+        updateBar(prog: Float(counter)/Float(startTime))
+        //timerLabel.text = "\(Double(counter)/100)"
     }
 
     
-    
+    func updateBar(prog:Float){
+        timerBar.setProgress(prog, animated: true)
+    }
     
 
     @IBAction func checkAnswer(_ sender: UITextField) {
@@ -151,6 +154,9 @@ class ViewController: UIViewController {
             if(answer == answerList[imageIndex]){ // correct
                 flashColor(red: oRed - 0.3,green: oGreen + 0.1,blue: oBlue - 0.2,alpha: oAlpha)
                 print("CORRECT")
+                
+                //add time
+                counter += 100
             }
             else{ // incorrect
                 flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
