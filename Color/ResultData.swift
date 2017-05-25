@@ -108,7 +108,7 @@ class ResultData{
         person.setValue(submitted.phoneInfo.phoneId, forKey: "phoneId")
         person.setValue(submitted.phoneInfo.brightness, forKey: "brightness")
         person.setValue(submitted.phoneInfo.model, forKey: "model")
-
+        //add difference in time
         
         do {
             print("AJGDJGDAGDGAKJDKAJDKHA")
