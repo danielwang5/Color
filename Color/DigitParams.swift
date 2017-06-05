@@ -8,9 +8,7 @@
 
 import Foundation
 
-class DigitParams{
-    
-}
+//ORIGIN IS BOTTOM LEFT CORNER
 
 class Point{
     var x:Double
@@ -58,6 +56,24 @@ class Triangle: Shape{
     }
 }
 
+class Box:Shape{
+    var origin:Point
+    var width:Double = 0.0
+    var height:Double = 0.0
+    
+    init(o:Point, w:Double, h:Double){
+        origin = o
+        width = w
+        height = h
+    }
+    
+    func within(p:Point) -> Bool{
+        let diffX:Double = (p.x-origin.x)
+        let diffY:Double = (p.y-origin.y)
+        return 0 <= diffX && diffX < width && 0 <= diffY && diffY < height
+    }
+}
+
 class Circle: Shape{
     
     var center: Point
@@ -102,26 +118,46 @@ class Digit: Shape{ // a collection of shapes
         assert(0 <= value && value <= 9)
         switch value {
         case 0:
-            shapeList = []
+            shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 0.5),
+                         Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.5, sE: 1.0),
+                         Box(o: Point(xx: 0.2,yy: 0.3),w: 0.2,h: 0.4),
+                         Box(o: Point(xx: 0.6,yy: 0.3),w: 0.2,h: 0.4)]
         case 1:
-            shapeList = [Triangle(v1x: 0.4,v1y: 0.0,v2x: 0.6,v2y: 0.0,v3x: 0.4,v3y: 1.0),
-                         Triangle(v1x: 0.6,v1y: 0.0,v2x: 0.4,v2y: 1.0,v3x: 0.6,v3y: 1.0)]
+            shapeList = [Box(o: Point(xx: 0.4,yy: 0.0),w: 0.2,h: 1.0)]
         case 2:
-            shapeList = []
+            shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 0.5),
+                         Box(o: Point(xx: 0.2,yy: 0.0),w: 0.6,h: 0.2),
+                         Triangle(v1x: 0.2,v1y: 0.2,v2x: 0.2,v2y: 0.4,v3x: 0.6,v3y: 0.7),
+                         Triangle(v1x: 0.2,v1y: 0.4,v2x: 0.6,v2y: 0.7,v3x: 0.8,v3y: 0.7)]
         case 3:
-            shapeList = []
+            shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 0.5),
+                         Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.75, sE: 1.0),
+                         Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.0, sE: 0.25),
+                         Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.5, sE: 1.0)]
         case 4:
-            shapeList = []
+            shapeList = [Box(o: Point(xx: 0.2,yy: 0.4),w: 0.2,h: 0.6),
+                         Box(o: Point(xx: 0.4,yy: 0.4),w: 0.2,h: 0.2),
+                         Box(o: Point(xx: 0.6,yy: 0.0),w: 0.2,h: 1.0)]
         case 5:
-            shapeList = []
+            shapeList = [Box(o: Point(xx: 0.2,yy: 0.8),w: 0.6,h: 0.2),
+                        Box(o: Point(xx: 0.2,yy: 0.5),w: 0.2,h: 0.3),
+                        Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.0, sE: 0.4),
+                        Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.6, sE: 1.0)]
         case 6:
-            shapeList = []
+            shapeList = [Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.0, sE: 1.0),
+                         Triangle(v1x: 0.3,v1y: 0.2,v2x: 0.3,v2y: 0.4,v3x: 0.6,v3y: 1.0),
+                         Triangle(v1x: 0.3,v1y: 0.4,v2x: 0.6,v2y: 1.0,v3x: 0.8,v3y: 1.0)]
         case 7:
-            shapeList = []
+            shapeList = [Box(o: Point(xx: 0.2,yy: 0.8),w: 0.4,h: 0.2),
+                         Triangle(v1x: 0.4,v1y: 0.0,v2x: 0.6,v2y: 0.0,v3x: 0.6,v3y: 0.8),
+                         Triangle(v1x: 0.6,v1y: 0.0,v2x: 0.8,v2y: 0.8,v3x: 0.6,v3y: 0.8)]
         case 8:
-            shapeList = []
+            shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 1.0),
+                         Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.0, sE: 1.0)]
         case 9:
-            shapeList = []
+            shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 1.0),
+                         Triangle(v1x: 0.7,v1y: 0.8,v2x: 0.7,v2y: 0.6,v3x: 0.4,v3y: 0.0),
+                         Triangle(v1x: 0.7,v1y: 0.6,v2x: 0.4,v2y: 0.0,v3x: 0.2,v3y: 0.0)]
             
             
         default:
@@ -130,7 +166,12 @@ class Digit: Shape{ // a collection of shapes
     }
     
     func within(p: Point) -> Bool {
-        
+        for thing in shapeList{
+            if thing.within(p: p){
+                return true
+            }
+        }
+        return false
     }
 }
 
