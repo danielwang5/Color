@@ -14,6 +14,17 @@ import UIKit
 
 class DrawingTestView: UIView{
     override func draw(_ rect: CGRect) {
+        
+        
+        // DIGIT TO DRAW:
+        let theNumber:Int = 3
+        let numberShape = Digit(value: theNumber)
+        
+        //COLORS USED:
+        let numberColor = UIColor.blue.cgColor
+        let backgroundColor = UIColor.green.cgColor
+        
+        
         let context = UIGraphicsGetCurrentContext()
         context?.setLineWidth(2.0)
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -40,8 +51,8 @@ class DrawingTestView: UIView{
         let MAX_R:Double = 12;
         
         // canvas size
-        let WIDTH:Int  = 600;
-        let HEIGHT:Int = 600;
+        let WIDTH:Int  = 300;
+        let HEIGHT:Int = 300;
         let SIZE = WIDTH * HEIGHT;
         
         // buffer for store ineligible positions of circles
@@ -59,14 +70,14 @@ class DrawingTestView: UIView{
         
         
         // point obj
-        struct Point {
+        /*struct Point {
             var x:Double = 0
             var y:Double = 0
             init(x1:Double, y1:Double){
                 x = x1
                 y = y1
             }
-        }
+        }*/
         
         // circle obj
         
@@ -87,12 +98,18 @@ class DrawingTestView: UIView{
         
         func show(circ:Circle){
             //fill(random(0, 255)); RANDOM COLOR??
-            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius - SPACING), color: UIColor.blue.cgColor))
+            
+            let relativeX:Double = circ.x / Double(WIDTH)
+            let relativeY:Double = 1.0 - circ.y / Double(HEIGHT)
+            
+            let colorUsed = numberShape.within(p: Point(xx: relativeX,yy: relativeY)) ? numberColor : backgroundColor
+            
+            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius - SPACING), color: colorUsed))
         }
         
         // index to coordinate
         func getPos(index:Int) -> Point {
-            return Point(x1: Double(index % WIDTH), y1: Double(index / WIDTH));
+            return Point(xx: Double(index % WIDTH), yy: Double(index / WIDTH));
         }
         
         // coordinate to index

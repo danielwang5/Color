@@ -105,8 +105,11 @@ class Ring: Shape{
     }
     
     func within(p:Point) -> Bool{
-        let angle01:Double = atan2(p.y - center.y, p.x - center.x)/(2*M_PI)
-        return Circle(c: center,r: outer).within(p:p) && !Circle(c: center,r: outer).within(p:p) &&
+        var angle01:Double = atan2(p.y - center.y, p.x - center.x)/(2*M_PI)
+        if(angle01 < 0.0){
+            angle01 += 1
+        }
+        return Circle(c: center,r: outer).within(p:p) && !Circle(c: center,r: inner).within(p:p) &&
             sectorBegin <= angle01 && angle01 < sectorEnd
     }
 }
