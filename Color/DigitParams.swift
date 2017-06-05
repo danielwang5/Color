@@ -24,7 +24,7 @@ protocol Shape{
     func within(p:Point) -> Bool
 }
 
-class Triangle: Shape{
+class Triangle: Shape{ 
     var vertices:[Point] //between 0.0 and 1.0
     
     init(v:[Point]){
@@ -37,7 +37,21 @@ class Triangle: Shape{
     
     func within(p:Point) -> Bool{
         
-        var p0 = vertices[0]
+        func sign(p1:Point, p2:Point, p3:Point) -> Double{
+            return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y)
+        }
+        
+        let v1 = vertices[0]
+        let v2 = vertices[1]
+        let v3 = vertices[2]
+            
+        let b1 = sign(p1: p, p2: v1, p3: v2) < 0.0
+        let b2 = sign(p1: p, p2: v2, p3: v3) < 0.0
+        let b3 = sign(p1: p, p2: v3, p3: v1) < 0.0
+            
+        return ((b1 == b2) && (b2 == b3))
+        
+        /*var p0 = vertices[0]
         var p1 = vertices[1]
         var p2 = vertices[2]
         
@@ -52,7 +66,7 @@ class Triangle: Shape{
         var t3 = p1.x * p.y - p0.x * p.y
         var t = (t1 + t2 + t3) * sign
         
-        return s > 0 && t > 0 && (s + t) < 2 * A * sign
+        return s > 0 && t > 0 && (s + t) < 2 * A * sign*/
     }
 }
 
@@ -130,8 +144,8 @@ class Digit: Shape{ // a collection of shapes
         case 2:
             shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 0.5),
                          Box(o: Point(xx: 0.2,yy: 0.0),w: 0.6,h: 0.2),
-                         Triangle(v1x: 0.2,v1y: 0.2,v2x: 0.2,v2y: 0.4,v3x: 0.6,v3y: 0.7),
-                         Triangle(v1x: 0.2,v1y: 0.4,v2x: 0.6,v2y: 0.7,v3x: 0.8,v3y: 0.7)]
+                         Triangle(v1x: 0.2,v1y: 0.2,v2x: 0.4,v2y: 0.2,v3x: 0.6,v3y: 0.7),
+                         Triangle(v1x: 0.4,v1y: 0.2,v2x: 0.6,v2y: 0.7,v3x: 0.8,v3y: 0.7)]
         case 3:
             shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 0.5),
                          Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.75, sE: 1.0),
@@ -148,10 +162,10 @@ class Digit: Shape{ // a collection of shapes
                         Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.6, sE: 1.0)]
         case 6:
             shapeList = [Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.0, sE: 1.0),
-                         Triangle(v1x: 0.3,v1y: 0.2,v2x: 0.3,v2y: 0.4,v3x: 0.6,v3y: 1.0),
-                         Triangle(v1x: 0.3,v1y: 0.4,v2x: 0.6,v2y: 1.0,v3x: 0.8,v3y: 1.0)]
+                         Triangle(v1x: 0.2,v1y: 0.3,v2x: 0.4,v2y: 0.3,v3x: 0.6,v3y: 1.0),
+                         Triangle(v1x: 0.4,v1y: 0.3,v2x: 0.6,v2y: 1.0,v3x: 0.8,v3y: 1.0)]
         case 7:
-            shapeList = [Box(o: Point(xx: 0.2,yy: 0.8),w: 0.4,h: 0.2),
+            shapeList = [Box(o: Point(xx: 0.2,yy: 0.8),w: 0.6,h: 0.2),
                          Triangle(v1x: 0.4,v1y: 0.0,v2x: 0.6,v2y: 0.0,v3x: 0.6,v3y: 0.8),
                          Triangle(v1x: 0.6,v1y: 0.0,v2x: 0.8,v2y: 0.8,v3x: 0.6,v3y: 0.8)]
         case 8:
@@ -159,8 +173,8 @@ class Digit: Shape{ // a collection of shapes
                          Ring(c: Point(xx: 0.5,yy: 0.3),i: 0.1, o: 0.3, sB: 0.0, sE: 1.0)]
         case 9:
             shapeList = [Ring(c: Point(xx: 0.5,yy: 0.7),i: 0.1, o: 0.3, sB: 0.0, sE: 1.0),
-                         Triangle(v1x: 0.7,v1y: 0.8,v2x: 0.7,v2y: 0.6,v3x: 0.4,v3y: 0.0),
-                         Triangle(v1x: 0.7,v1y: 0.6,v2x: 0.4,v2y: 0.0,v3x: 0.2,v3y: 0.0)]
+                         Triangle(v1x: 0.8,v1y: 0.7,v2x: 0.6,v2y: 0.7,v3x: 0.4,v3y: 0.0),
+                         Triangle(v1x: 0.6,v1y: 0.7,v2x: 0.4,v2y: 0.0,v3x: 0.2,v3y: 0.0)]
             
             
         default:

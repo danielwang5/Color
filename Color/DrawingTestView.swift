@@ -17,7 +17,7 @@ class DrawingTestView: UIView{
         
         
         // DIGIT TO DRAW:
-        let theNumber:Int = 3
+        let theNumber:Int = 9
         let numberShape = Digit(value: theNumber)
         
         //COLORS USED:
