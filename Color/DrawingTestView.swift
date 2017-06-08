@@ -17,8 +17,8 @@ class DrawingTestView: UIView{
         
         
         // DIGIT TO DRAW:
-        let theNumber:Int = 9
-        let numberShape = Digit(value: theNumber)
+        let theNumber:Int = 82
+        let numberShape = Number(val: theNumber)
         
         //COLORS USED:
         let numberColor = UIColor.blue.cgColor

@@ -24,7 +24,7 @@ protocol Shape{
     func within(p:Point) -> Bool
 }
 
-class Triangle: Shape{ 
+class Triangle: Shape{
     var vertices:[Point] //between 0.0 and 1.0
     
     init(v:[Point]){
@@ -189,6 +189,47 @@ class Digit: Shape{ // a collection of shapes
             }
         }
         return false
+    }
+}
+
+class Number: Shape{
+    
+ //1 or 2 digits
+    
+    var tens:Int = 0 // multi digit
+    var ones:Int = 0
+    
+    
+    var value:Int = -1
+    init(val:Int){ //value from 0 to 99
+        if(val >= 10){
+            tens = Int(val/10)
+            ones = val%10
+        }
+        value = val
+    }
+    
+    func within(p: Point) -> Bool {
+        if(value <= 9){
+            return Digit(value: value).within(p: p)
+        }
+        else{// Digits occupy:
+            //
+            //  ### ###
+            //  ### ###
+            //  ### ###
+            //
+            if(p.y < 0.25 || p.y > 0.75){
+                return false;
+            }
+            else if(p.x < 0.5){ //first digit (tens)
+                return Digit(value: tens).within(p: Point(xx: p.x * 2, yy: p.y * 2 - 0.5))
+            }
+            else{ //second digit (ones)
+                return Digit(value: ones).within(p: Point(xx: p.x * 2 - 1, yy: p.y * 2 - 0.5))
+            }
+        }
+        return false // should never reach
     }
 }
 
