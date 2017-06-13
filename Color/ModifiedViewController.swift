@@ -2,14 +2,14 @@
 //  ViewController.swift
 //  Color
 //
-//  Created by James Wang on 1/17/17.
+//  Created by James Wang on 6/8/17.
 //  Copyright © 2017 DanielW. All rights reserved.
 //
 
 
 
 /*DATABASE
-
+ 
  Whos playing (phone id)
  Quevaron #
  *start of game (timestamp)
@@ -28,16 +28,16 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
-
+class ModifiedViewController: UIViewController {
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    @IBOutlet weak var plateView: UIImageView!
-
+    @IBOutlet weak var plateView: DrawingTestView!
+    
     @IBOutlet weak var answerField: UITextField!
-
+    
     @IBOutlet weak var timerBar: UIProgressView!
     
     @IBOutlet weak var problemLabel: UILabel!
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     var results: ResultData2 = ResultData2() //ResultData?
     //var currArray:[Int] = [0,0,0,0,0]
     
-    //Timer 
+    //Timer
     var startTime:Int = 3000 //in centiseconds
     var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
@@ -63,15 +63,20 @@ class ViewController: UIViewController {
     var oBlue:Float = 0.8
     var oAlpha:Float = 1.0
     
-     //The Answers!!!
+    //The Answers!!!
+    
+    var randNum:Int = 0
     
     var nthQuestion = 0
-    var imageIndex: NSInteger = 0
+    //var imageIndex: NSInteger = 0
     var maxImages = 17 //number of images - 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //plateview redraw (currently useless?)
+        plateView.clearsContextBeforeDrawing = true
         
         
         //BG Color
@@ -81,7 +86,8 @@ class ViewController: UIViewController {
         phoneInfo = PhoneData(id:phoneId, mod: modelName, bright: brightness)
         
         //randomize imageIndex
-        imageIndex = randInt(upper: maxImages)
+        //imageIndex = randInt(upper: maxImages)
+        randNum = randInt(upper: 100)
         
         //setup timer
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
@@ -91,28 +97,25 @@ class ViewController: UIViewController {
         
         results = ResultData2()
         
-        plateView.image = UIImage(named: "plate\(imageIndex+1)")
+        //plateView.image = UIImage(named: "plate\(imageIndex+1)")
         answerField.keyboardType = UIKeyboardType.decimalPad
         
         //focus on text field
         answerField.becomeFirstResponder()
         
-        //plateView.isUserInteractionEnabled = true//so that image will move
-        
-        //set up gestures for swiping left and right
-        /*let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        plateView.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swiped(_:)))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-        plateView.addGestureRecognizer(swipeLeft)*/
-        
         
         answerField.text = "" //"\(answerList[0])"
         
-        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+        problemLabel.text = "Modified"
         
+        drawNum()
+        
+    }
+    
+    func drawNum(){
+        randNum = randInt(upper: 100)
+        plateView.theNumber = randNum
+        plateView.setNeedsDisplay()
     }
     
     func timerAction() {
@@ -124,34 +127,34 @@ class ViewController: UIViewController {
         
         counter -= 1
         updateBar(prog: Float(counter)/Float(startTime))
-        //timerLabel.text = "\(Double(counter)/100)"
     }
-
+    
     
     func updateBar(prog:Float){
         timerBar.setProgress(prog, animated: true)
     }
     
-
+    
     @IBAction func checkAnswer(_ sender: UITextField) {
         let answer = Int(answerField.text!)!
         
-        var timeElapsed:Double = Double(startTime - counter)/100
+        let timeElapsed:Double = Double(startTime - counter)/100
         
-        if(answer != answerList[imageIndex] / 10){
-            results.setAns(info: SubmittedData(
+        if(answer != randNum / 10){//if not in the middle of typing answer
+            /*results.setAns(info: SubmittedData(
                 phoneInf: phoneInfo,
                 orderinGam: nthQuestion,
-                quesId: imageIndex,
                 submittedAns: answer,
                 timeElapse: timeElapsed
-            ))
+            ))*/
+            
+            //COMMENT OUT FOR NOW!
             
             
             
             
             
-            if(answer == answerList[imageIndex]){ // correct
+            if(answer == randNum){ // correct
                 flashColor(red: oRed - 0.3,green: oGreen + 0.1,blue: oBlue - 0.2,alpha: oAlpha)
                 print("CORRECT")
                 
@@ -162,7 +165,7 @@ class ViewController: UIViewController {
                 flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
                 print("WRONG")
                 print(answer)
-                print(answerList[imageIndex])
+                print(randNum)
             }
             
             goForward()
@@ -184,59 +187,46 @@ class ViewController: UIViewController {
     
     func goBack(){
         // decrease index first
-        imageIndex -= 1
+        //imageIndex -= 1
         
         // check if index is in range
-        if imageIndex < 0 {
-            imageIndex = maxImages
-        }
-        plateView.image = UIImage(named: "plate\(imageIndex + 1)")
+        drawNum()
         
-        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
     }
     
     func goForward(){
         // increase index first
-        imageIndex = randInt(upper: maxImages)
+        //imageIndex = randInt(upper: maxImages)
         
         // check if index is in range
         //if imageIndex > maxImages {
-            //imageIndex = 0
-            //finish()
+        //imageIndex = 0
+        //finish()
         //}
-        plateView.image = UIImage(named: "plate\(imageIndex + 1)")
-        
-        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+        drawNum()
+
     }
     
     func swiped(_ gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-
-                case UISwipeGestureRecognizerDirection.right :
-                    NSLog("User swiped right")
-                    goBack()
+                
+            case UISwipeGestureRecognizerDirection.right :
+                NSLog("User swiped right")
+                goBack()
                 
                 
-                case UISwipeGestureRecognizerDirection.left:
-                    NSLog("User swiped Left")
-                    goForward()
+            case UISwipeGestureRecognizerDirection.left:
+                NSLog("User swiped Left")
+                goForward()
                 
-                default:
-                    break //stops the code/codes nothing.
+            default:
+                break //stops the code/codes nothing.
             }
-
-            //answerField.text = "\(results.data[imageIndex].correctAnswer)"
         }
     }
     
     func finish(){
-        //let vc = StopViewController()
-            //UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "finished") as! StopViewController
-        
-        //vc.results = (self.results.data)
-        //self.navigationController?.pushViewController(vc, animated:true)
-        
         
         self.performSegue(withIdentifier: "finished", sender: self.results.data)
     }

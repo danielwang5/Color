@@ -13,11 +13,13 @@ import UIKit
 
 
 class DrawingTestView: UIView{
+    
+    var theNumber:Int = 12
+    
     override func draw(_ rect: CGRect) {
         
         
         // DIGIT TO DRAW:
-        let theNumber:Int = 82
         let numberShape = Number(val: theNumber)
         
         //COLORS USED:
@@ -47,12 +49,12 @@ class DrawingTestView: UIView{
         let CIRCLE_ITERATIONS:Int = 10000
         let SPACING:Double = 0.5
         
-        let MIN_R:Double = 5;
-        let MAX_R:Double = 12;
+        let MIN_R:Double = 3;
+        let MAX_R:Double = 8;
         
         // canvas size
-        let WIDTH:Int  = 300;
-        let HEIGHT:Int = 300;
+        let WIDTH:Int  = 240;
+        let HEIGHT:Int = 240;
         let SIZE = WIDTH * HEIGHT;
         
         // buffer for store ineligible positions of circles

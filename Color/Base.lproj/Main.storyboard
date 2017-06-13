@@ -22,21 +22,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-aO-oxl">
-                                <rect key="frame" x="150.5" y="273" width="74" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="133.5" y="274.5" width="109" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Original"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7mb-dT-dtx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Test!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-N7-EBz">
-                                <rect key="frame" x="66.5" y="144" width="242" height="65"/>
+                                <rect key="frame" x="66.5" y="145.5" width="242" height="65"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2F-HS-8a6">
+                                <rect key="frame" x="125" y="356" width="125" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Modified"/>
+                                <connections>
+                                    <segue destination="MFV-OO-2It" kind="show" id="m5P-fM-Hz1"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-LO-2e8">
-                                <rect key="frame" x="112" y="377" width="151" height="41"/>
+                                <rect key="frame" x="112" y="467" width="151" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Drawing Tests"/>
                                 <connections>
@@ -46,19 +54,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cUg-LO-2e8" firstAttribute="top" secondItem="WIZ-aO-oxl" secondAttribute="bottom" constant="50" id="9Kz-AX-fJw"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Gel-eM-ClO"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Hpq-Rs-vXE"/>
                             <constraint firstItem="cUg-LO-2e8" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="QLT-d4-6yy"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="top" secondItem="Pm5-N7-EBz" secondAttribute="bottom" constant="64" id="QQn-n4-2hZ"/>
+                            <constraint firstItem="Y2F-HS-8a6" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Whf-aG-0MN"/>
                             <constraint firstItem="Pm5-N7-EBz" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="ZxF-fg-MSO"/>
+                            <constraint firstItem="Y2F-HS-8a6" firstAttribute="top" secondItem="WIZ-aO-oxl" secondAttribute="bottom" constant="30.5" id="r3b-tV-Guo"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerY" secondItem="KaA-r0-dPw" secondAttribute="centerY" constant="-33.5" id="yiY-cl-asF"/>
+                            <constraint firstItem="BkG-zk-1gm" firstAttribute="top" secondItem="cUg-LO-2e8" secondAttribute="bottom" constant="159" id="zlz-pe-uPE"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSW-94-rLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-457"/>
+            <point key="canvasLocation" x="140" y="-457.42128935532236"/>
         </scene>
         <!--Drawing Test Controller-->
         <scene sceneID="21g-G8-1Vv">
@@ -76,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3R9-5a-yge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="-796"/>
+            <point key="canvasLocation" x="967" y="-807"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -109,20 +119,15 @@
                                             <constraint firstAttribute="height" constant="240" id="jUH-Oz-5w9"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="v1Z-q3-4Km">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
                                         <rect key="frame" x="0.0" y="322.5" width="240" height="17"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="17"/>
-                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="editingChanged" id="XcL-Hp-fBx"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="editingChanged" id="XcL-Hp-fBx"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="bkt-3c-R9W"/>
@@ -147,7 +152,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="427.73613193403304"/>
+            <point key="canvasLocation" x="966" y="-93"/>
+        </scene>
+        <!--Modified View Controller-->
+        <scene sceneID="hYM-bO-vmp">
+            <objects>
+                <viewController id="MFV-OO-2It" customClass="ModifiedViewController" customModule="Color" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oAS-gS-f35"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZaH-YB-D5w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s3s-Zi-ut1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZSy-py-k0c">
+                                <rect key="frame" x="68" y="40" width="240" height="339.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-h1-t6d">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="maA-A4-Xyd">
+                                        <rect key="frame" x="0.0" y="40.5" width="240" height="2"/>
+                                    </progressView>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK7-Oy-3VR" customClass="DrawingTestView" customModule="Color" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="62.5" width="240" height="240"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="0JB-Ue-TYQ"/>
+                                            <constraint firstAttribute="width" constant="240" id="Rac-gw-ZTl"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-Kk-YqC">
+                                        <rect key="frame" x="0.0" y="322.5" width="240" height="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="checkAnswer:" destination="MFV-OO-2It" eventType="editingChanged" id="pQK-ff-wmU"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="mYj-Hq-kWF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="mwZ-xK-XhL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZSy-py-k0c" firstAttribute="centerX" secondItem="s3s-Zi-ut1" secondAttribute="centerX" id="3xB-IL-TVQ"/>
+                            <constraint firstItem="ZSy-py-k0c" firstAttribute="top" secondItem="oAS-gS-f35" secondAttribute="bottom" constant="20" id="mHR-Vt-NG8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerField" destination="KzO-Kk-YqC" id="vAh-Ig-LM0"/>
+                        <outlet property="plateView" destination="BK7-Oy-3VR" id="SXT-6W-J47"/>
+                        <outlet property="problemLabel" destination="EdE-h1-t6d" id="4pz-h4-ymN"/>
+                        <outlet property="timerBar" destination="maA-A4-Xyd" id="bdw-o0-eQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0I-cn-4jC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1649" y="-93"/>
         </scene>
         <!--Stop View Controller-->
         <scene sceneID="Nji-mN-xwz">
@@ -198,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1a-ff-P8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247" y="39"/>
+            <point key="canvasLocation" x="1314" y="618"/>
         </scene>
     </scenes>
 </document>
