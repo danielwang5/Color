@@ -87,7 +87,7 @@ class ModifiedViewController: UIViewController {
         
         //randomize imageIndex
         //imageIndex = randInt(upper: maxImages)
-        randNum = randInt(upper: 100)
+        randNum = randInt(upper: 99) + 1 //from 1 to 99
         
         //setup timer
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
@@ -115,7 +115,7 @@ class ModifiedViewController: UIViewController {
     func drawNum(){
         randNum = randInt(upper: 100)
         plateView.theNumber = randNum
-        plateView.setNeedsDisplay()
+        plateView.setNeedsDisplay() //should clear view and redraw --- fix this
     }
     
     func timerAction() {

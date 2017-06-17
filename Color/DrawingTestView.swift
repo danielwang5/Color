@@ -18,6 +18,7 @@ class DrawingTestView: UIView{
     
     override func draw(_ rect: CGRect) {
         
+        self.layer.sublayers = nil //clear circles
         
         // DIGIT TO DRAW:
         let numberShape = Number(val: theNumber)
@@ -37,6 +38,7 @@ class DrawingTestView: UIView{
         //context?.addLine(to: CGPoint(x: 100, y: 200))
         //context?.addLine(to: CGPoint(x: 200, y: 200))
         context?.strokePath()
+        
         
         
         
