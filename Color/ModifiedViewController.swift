@@ -57,6 +57,9 @@ class ModifiedViewController: UIViewController {
     var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
     
+    //Score
+    var score:Int = 0
+    
     //Background
     var oRed:Float = 0.8
     var oGreen:Float = 0.8
@@ -86,7 +89,6 @@ class ModifiedViewController: UIViewController {
         phoneInfo = PhoneData(id:phoneId, mod: modelName, bright: brightness)
         
         //randomize imageIndex
-        //imageIndex = randInt(upper: maxImages)
         randNum = randInt(upper: 99) + 1 //from 1 to 99
         
         //setup timer
@@ -106,7 +108,7 @@ class ModifiedViewController: UIViewController {
         
         answerField.text = "" //"\(answerList[0])"
         
-        problemLabel.text = "Modified"
+        problemLabel.text = String(score)
         
         drawNum()
         
@@ -160,6 +162,10 @@ class ModifiedViewController: UIViewController {
                 
                 //add time
                 counter += 100
+                
+                //increment score
+                score += 1
+                problemLabel.text = String(score)
             }
             else{ // incorrect
                 flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
@@ -186,23 +192,11 @@ class ModifiedViewController: UIViewController {
     
     
     func goBack(){
-        // decrease index first
-        //imageIndex -= 1
-        
-        // check if index is in range
         drawNum()
         
     }
     
     func goForward(){
-        // increase index first
-        //imageIndex = randInt(upper: maxImages)
-        
-        // check if index is in range
-        //if imageIndex > maxImages {
-        //imageIndex = 0
-        //finish()
-        //}
         drawNum()
 
     }
@@ -228,7 +222,7 @@ class ModifiedViewController: UIViewController {
     
     func finish(){
         
-        self.performSegue(withIdentifier: "finished", sender: self.results.data)
+        self.performSegue(withIdentifier: "finishedmodified", sender: self.results.data)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

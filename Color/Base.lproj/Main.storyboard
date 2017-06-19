@@ -213,6 +213,7 @@
                         <outlet property="plateView" destination="BK7-Oy-3VR" id="SXT-6W-J47"/>
                         <outlet property="problemLabel" destination="EdE-h1-t6d" id="4pz-h4-ymN"/>
                         <outlet property="timerBar" destination="maA-A4-Xyd" id="bdw-o0-eQS"/>
+                        <segue destination="poL-iH-GtU" kind="show" identifier="finishedmodified" id="yCa-DB-ILp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0I-cn-4jC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,4 +272,7 @@
             <point key="canvasLocation" x="1314" y="618"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BDf-99-GAg"/>
+    </inferredMetricsTieBreakers>
 </document>

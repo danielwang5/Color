@@ -57,6 +57,9 @@ class ViewController: UIViewController {
     var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
     
+    //Score
+    var score:Int = 0
+    
     //Background
     var oRed:Float = 0.8
     var oGreen:Float = 0.8
@@ -111,7 +114,7 @@ class ViewController: UIViewController {
         
         answerField.text = "" //"\(answerList[0])"
         
-        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+        problemLabel.text = String(score) //"\(imageIndex + 1)/\(maxImages + 1)"
         
     }
     
@@ -157,6 +160,10 @@ class ViewController: UIViewController {
                 
                 //add time
                 counter += 100
+                
+                //increment score
+                score += 1
+                problemLabel.text = String(score)
             }
             else{ // incorrect
                 flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
@@ -192,7 +199,7 @@ class ViewController: UIViewController {
         }
         plateView.image = UIImage(named: "plate\(imageIndex + 1)")
         
-        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+        //problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
     }
     
     func goForward(){
@@ -206,7 +213,7 @@ class ViewController: UIViewController {
         //}
         plateView.image = UIImage(named: "plate\(imageIndex + 1)")
         
-        problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
+        //problemLabel.text = "\(imageIndex + 1)/\(maxImages + 1)"
     }
     
     func swiped(_ gesture: UIGestureRecognizer) {
