@@ -1,4 +1,4 @@
-# Color
+# Color (minimum iOS 10.0)
 
 Color (tentative name) is an iOS app designed to accurately portray Ishihara tests on a mobile platform. 
 
