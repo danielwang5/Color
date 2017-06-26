@@ -13,74 +13,6 @@ import CoreData
 import UIKit
 
 
-/*class ResultData: NSObject, NSCoding {
-    
-    
-    //MARK: Properties
-    
-    var ans: [String: Int] = ["a0":0,"a1":0,"a2":0,"a3":0,"a4":0]
-    
-    //MARK: Archiving Paths
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("answers")
-    
-    
-    struct PropertyKey {
-        static let ans = "ans"
-    }
-    
-    
-    //MARK: Initialization
-    
-    init?(answer: Int) {
-        super.init()
-        
-        self.ans = loadAnswers()!
-        
-        // The name must not be empty
-        if self.ans.isEmpty{
-            self.ans = ["a0":0,"a1":0,"a2":0,"a3":0,"a4":0]
-        }
-        
-        // The rating must be between 0 and 5 inclusive??
-        // Initialize stored properties.
-        
-        
-        
-        
-    }
-    
-    //MARK: NSCoding
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.ans, forKey: PropertyKey.ans)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        
-        // The name is required. If we cannot decode a name string, the initializer should fail.
-        guard let name = aDecoder.decodeObject(forKey: PropertyKey.ans) as? [String:Int] else {
-            return nil
-        }
-        
-        // Must call designated initializer.
-        self.init(answer:0)
-        
-    }
-    
-    func saveAnswers() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(self.ans, toFile: ResultData.ArchiveURL.path)
-        if(isSuccessfulSave){
-            print("YYYYYYEEEEESSSS!!!!!")
-        }
-    }
-    
-    func loadAnswers() -> [String:Int]?  {
-        print("LOADED!")
-        return NSKeyedUnarchiver.unarchiveObject(withFile: ResultData.ArchiveURL.path) as? [String:Int]
-    }
-}*/
-
 class ResultData{
     
     func saveAnswer(submitted:SubmittedData) {
@@ -148,16 +80,6 @@ class ResultData{
             for key in keyList{
                 out += "\(item.value(forKey: key)!),"
             }
-            
-            /*o += (item.value(forKey: "correctAnswer")! as! String) + ","
-            o += (item.value(forKey: "submittedAnswer")! as! String) + ","
-            o += (item.value(forKey: "orderInGame")! as! String) + ","
-            o += (item.value(forKey: "correctAnswer")! as! String) + ","
-            o += (item.value(forKey: "correct")! as! String) + ","
-            o += (item.value(forKey: "timeElapsed")! as! String) + ","
-            o += (item.value(forKey: "phoneId")! as! String) + ","
-            o += (item.value(forKey: "model")! as! String) + ","
-            o += (item.value(forKey: "brightness")! as! String) + "\n"*/
         }
         
         return out

@@ -229,7 +229,6 @@ class Number: Shape{
                 return Digit(value: ones).within(p: Point(xx: p.x * 2 - 1, yy: p.y * 2 - 0.5))
             }
         }
-        return false // should never reach
     }
 }
 
