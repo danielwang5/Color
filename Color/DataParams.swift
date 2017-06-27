@@ -21,15 +21,15 @@ struct SubmittedDataModified{
     var timeElapsed: Double = -1.0
     var phoneInfo: PhoneData = PhoneData()
     
-    var numberColorR:Int = -1
-    var numberColorG:Int = -1
-    var numberColorB:Int = -1
-    var backgroundColorR:Int = -1
-    var backgroundColorG:Int = -1
-    var backgroundColorB:Int = -1
+    var numberColorR:Float = -1
+    var numberColorG:Float = -1
+    var numberColorB:Float = -1
+    var backgroundColorR:Float = -1
+    var backgroundColorG:Float = -1
+    var backgroundColorB:Float = -1
 
     
-    init(phoneInf: PhoneData, orderinGam: Int, correctAns: Int, submittedAns: Int, timeElapse: Double, numCol: [Int], backCol:[Int]) {
+    init(phoneInf: PhoneData, orderinGam: Int, correctAns: Int, submittedAns: Int, timeElapse: Double, numCol: [Float], backCol:[Float]) {
         phoneInfo = phoneInf
         submittedAnswer = submittedAns
         orderInGame = orderinGam
@@ -111,6 +111,22 @@ class ResultData2 {
     }
     
     func setAns(info: SubmittedData){
+        self.data.append(info)
+    }
+}
+
+class ResultData2Modified {
+    var data: [SubmittedDataModified]
+    
+    init() {
+        self.data = []
+    }
+    
+    init(dat: [SubmittedDataModified]){
+        self.data = dat
+    }
+    
+    func setAns(info: SubmittedDataModified){
         self.data.append(info)
     }
 }

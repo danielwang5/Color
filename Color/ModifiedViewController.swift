@@ -49,7 +49,7 @@ class ModifiedViewController: UIViewController {
     
     var phoneInfo = PhoneData()
     
-    var results: ResultData2 = ResultData2() //ResultData?
+    var results: ResultData2Modified = ResultData2Modified() //ResultData?
     //var currArray:[Int] = [0,0,0,0,0]
     
     //Timer
@@ -65,6 +65,10 @@ class ModifiedViewController: UIViewController {
     var oGreen:Float = 0.8
     var oBlue:Float = 0.8
     var oAlpha:Float = 1.0
+    
+    //Plate Colors
+    var numCol:[Float] = [0.0,0.0,1.0]
+    var backCol:[Float] = [0.0,1.0,0.0]
     
     //The Answers!!!
     
@@ -97,7 +101,7 @@ class ModifiedViewController: UIViewController {
         counter = startTime
         
         
-        results = ResultData2()
+        results = ResultData2Modified()
         
         //plateView.image = UIImage(named: "plate\(imageIndex+1)")
         answerField.keyboardType = UIKeyboardType.decimalPad
@@ -138,17 +142,20 @@ class ModifiedViewController: UIViewController {
     
     
     @IBAction func checkAnswer(_ sender: UITextField) {
-        let answer = Int(answerField.text!)!
+        let answer = Int(answerField.text!.digits)!
         
         let timeElapsed:Double = Double(startTime - counter)/100
         
         if(answer != randNum / 10){//if not in the middle of typing answer
-            /*results.setAns(info: SubmittedData(
+            results.setAns(info: SubmittedDataModified(
                 phoneInf: phoneInfo,
                 orderinGam: nthQuestion,
+                correctAns: randNum,
                 submittedAns: answer,
-                timeElapse: timeElapsed
-            ))*/
+                timeElapse: timeElapsed,
+                numCol: numCol,
+                backCol: backCol
+            ))
             
             //COMMENT OUT FOR NOW!
             

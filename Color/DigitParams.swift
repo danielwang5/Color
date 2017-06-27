@@ -8,6 +8,16 @@
 
 import Foundation
 
+//String digit filter
+
+extension String {
+    
+    var digits: String {
+        return components(separatedBy: CharacterSet.decimalDigits.inverted)
+            .joined()
+    }
+}
+
 //ORIGIN IS BOTTOM LEFT CORNER
 
 class Point{

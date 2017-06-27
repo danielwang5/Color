@@ -15,6 +15,8 @@ import UIKit
 class DrawingTestView: UIView{
     
     var theNumber:Int = 12
+    var numColor:[Float] = [0,0,0]
+    var backColor:[Float] = [0,0,0]
     
     override func draw(_ rect: CGRect) {
         
@@ -24,8 +26,8 @@ class DrawingTestView: UIView{
         let numberShape = Number(val: theNumber)
         
         //COLORS USED:
-        let numberColor = UIColor.blue.cgColor
-        let backgroundColor = UIColor.green.cgColor
+        let numberColor = UIColor(colorLiteralRed: numColor[0], green: numColor[1], blue: numColor[2], alpha: 1.0)
+        let backgroundColor = UIColor(colorLiteralRed: backColor[0], green: backColor[1], blue: backColor[2], alpha: 1.0)
         
         
         let context = UIGraphicsGetCurrentContext()
@@ -108,7 +110,7 @@ class DrawingTestView: UIView{
             
             let colorUsed = numberShape.within(p: Point(xx: relativeX,yy: relativeY)) ? numberColor : backgroundColor
             
-            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius - SPACING), color: colorUsed))
+            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius - SPACING), color: colorUsed as! CGColor))
         }
         
         // index to coordinate
@@ -199,9 +201,9 @@ class DrawingTestView: UIView{
             for i in 0..<neighbors.count{
                 for j in 0..<neighbors[i].count{
                     
-                    var circle = neighbors[i][j];
+                    let circle = neighbors[i][j];
                     // distance to the circle edge
-                    var r = dist(x1: x, y1: y, x2: circle.x, y2: circle.y) - circle.radius;
+                    let r = dist(x1: x, y1: y, x2: circle.x, y2: circle.y) - circle.radius;
                     
                     if (r < max) {
                         max = r;
@@ -230,16 +232,16 @@ class DrawingTestView: UIView{
         let SQRT:Double = 1 / sqrt(2);
         // disallow positions in area under the circle
         func reduceArea(circle:Circle) {
-            var size = round((circle.radius + MIN_R - 1) * SQRT);
+            let size = round((circle.radius + MIN_R - 1) * SQRT);
             
-            var beginX = constrain(val: circle.x - size, lower: 0, upper: Double(WIDTH));
-            var beginY = constrain(val: circle.y - size, lower: 0, upper: Double(HEIGHT));
-            var endX   = constrain(val: circle.x + size, lower: 0, upper: Double(WIDTH));
-            var endY   = constrain(val: circle.y + size, lower: 0, upper: Double(HEIGHT));
+            let beginX = constrain(val: circle.x - size, lower: 0, upper: Double(WIDTH));
+            let beginY = constrain(val: circle.y - size, lower: 0, upper: Double(HEIGHT));
+            let endX   = constrain(val: circle.x + size, lower: 0, upper: Double(WIDTH));
+            let endY   = constrain(val: circle.y + size, lower: 0, upper: Double(HEIGHT));
             
-            var length = endX - beginX;
+            _ = endX - beginX;
             var index  = getIndex(x: Int(beginX), y: Int(beginY));
-            for y in Int(beginY)...Int(endY){
+            for _ in Int(beginY)...Int(endY){
                 //area.fill(1, index, index + length);
                 index += WIDTH;
             }
@@ -258,12 +260,12 @@ class DrawingTestView: UIView{
             // create chunks
             for j in 0 ..< CHUNK_ROWS {
                 chunks.append([[Circle]]())
-                for i in 0 ..< CHUNK_COLS {
+                for _ in 0 ..< CHUNK_COLS {
                     chunks[j].append([Circle]())
                 }
             }
             
-            for i in 1...CIRCLE_ITERATIONS {
+            for _ in 1...CIRCLE_ITERATIONS {
                 generate()
             }
         }
@@ -277,12 +279,12 @@ class DrawingTestView: UIView{
             } while(area[index] == 1);
             
             
-            var center = getPos(index: index);
+            let center = getPos(index: index);
             
-            var radius = getRadius(x: center.x, y: center.y);
+            let radius = getRadius(x: center.x, y: center.y);
             
             if(radius >= 0.0) {
-                var circle = Circle(x1: Double(center.x), y1: center.y, radius1: radius);
+                let circle = Circle(x1: Double(center.x), y1: center.y, radius1: radius);
                 var chunk  = getChunk(x: center.x, y: center.y);
                 
                 // put a circle in the corresponding chunk

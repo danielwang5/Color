@@ -137,9 +137,9 @@ class ViewController: UIViewController {
     
 
     @IBAction func checkAnswer(_ sender: UITextField) {
-        let answer = Int(answerField.text!)!
+        let answer = Int(answerField.text!.digits)!
         
-        var timeElapsed:Double = Double(startTime - counter)/100
+        let timeElapsed:Double = Double(startTime - counter)/100
         
         if(answer != answerList[imageIndex] / 10){
             results.setAns(info: SubmittedData(
