@@ -16,3 +16,4 @@ To run on the phone, connect your phone via USB onto your Mac. Then to the right
 
 The app itself contains two buttons on the main menu: Start and Drawing Tests. Right now, the latter creates a canvas with many circles, to be used in the future with Ishihara tests, so press "Start" to play the game. You have 30 seconds to answer as many tests as you can correctly, before time runs out.
 
+Feedback Form: https://goo.gl/forms/cXJbh96zOfF5pssy2
