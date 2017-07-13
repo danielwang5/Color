@@ -75,8 +75,6 @@ class ModifiedViewController: UIViewController {
     var randNum:Int = 0
     
     var nthQuestion = 0
-    //var imageIndex: NSInteger = 0
-    var maxImages = 17 //number of images - 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,9 +117,20 @@ class ModifiedViewController: UIViewController {
     }
     
     func drawNum(){
+        
+        nthQuestion += 1
+        
         randNum = randInt(upper: 100)
         plateView.theNumber = randNum
         plateView.setNeedsDisplay() //should clear view and redraw --- fix this
+        
+        var newColors = ColorGeneration().getColors(iteration: nthQuestion - 1)
+        
+        backCol = newColors[0]
+        numCol = newColors[1]
+        
+        plateView.numColor = numCol
+        plateView.backColor = backCol
     }
     
     func timerAction() {
@@ -142,7 +151,8 @@ class ModifiedViewController: UIViewController {
     
     
     @IBAction func checkAnswer(_ sender: UITextField) {
-        let answer = Int(answerField.text!.digits)!
+        let answerDigits = answerField.text!.digits
+        let answer = answerDigits=="" ?0:Int(answerDigits)!
         
         let timeElapsed:Double = Double(startTime - counter)/100
         

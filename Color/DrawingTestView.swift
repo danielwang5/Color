@@ -110,7 +110,7 @@ class DrawingTestView: UIView{
             
             let colorUsed = numberShape.within(p: Point(xx: relativeX,yy: relativeY)) ? numberColor : backgroundColor
             
-            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius - SPACING), color: colorUsed as! CGColor))
+            self.layer.addSublayer(createCircle(x: CGFloat(circ.x), y: CGFloat(circ.y), radius: CGFloat(circ.radius - SPACING), color: colorUsed.cgColor))
         }
         
         // index to coordinate
