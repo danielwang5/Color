@@ -74,7 +74,11 @@ class ModifiedViewController: UIViewController {
     
     var randNum:Int = 0
     
-    var nthQuestion = 0
+    var nthQuestion:Int = 0
+    var difficulty:Int = 0
+    
+    var numCorrect:Int = 0
+    var numIncorrect:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +114,7 @@ class ModifiedViewController: UIViewController {
         
         answerField.text = "" //"\(answerList[0])"
         
-        problemLabel.text = String(score)
+        problemLabel.text = String(numCorrect) + "/" + String(numIncorrect) //String(score)
         
         drawNum()
         
@@ -124,7 +128,7 @@ class ModifiedViewController: UIViewController {
         plateView.theNumber = randNum
         plateView.setNeedsDisplay() //should clear view and redraw --- fix this
         
-        var newColors = ColorGeneration().getColors(iteration: nthQuestion - 1)
+        var newColors = ColorGeneration().getColors(iteration: difficulty)
         
         backCol = newColors[0]
         numCol = newColors[1]
@@ -180,16 +184,25 @@ class ModifiedViewController: UIViewController {
                 //add time
                 counter += 100
                 
+                difficulty += 1
+                numCorrect += 1
+                
                 //increment score
                 score += 1
-                problemLabel.text = String(score)
+                
             }
             else{ // incorrect
+                
+                difficulty -= 1
+                numIncorrect += 1
+                
                 flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
                 print("WRONG")
                 print(answer)
                 print(randNum)
             }
+            
+            problemLabel.text = String(numCorrect) + "/" + String(numIncorrect)
             
             goForward()
             
@@ -244,7 +257,8 @@ class ModifiedViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! StopViewController
-        controller.results = sender as! [SubmittedData]
+        controller.resultsModified = sender as! [SubmittedDataModified]
+        controller.mode = 2
     }
     
     override func didReceiveMemoryWarning() {

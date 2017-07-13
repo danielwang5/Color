@@ -72,6 +72,9 @@ class ViewController: UIViewController {
     var imageIndex: NSInteger = 0
     var maxImages = 17 //number of images - 1
     
+    var numCorrect:Int = 0
+    var numIncorrect:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -114,7 +117,7 @@ class ViewController: UIViewController {
         
         answerField.text = "" //"\(answerList[0])"
         
-        problemLabel.text = String(score) //"\(imageIndex + 1)/\(maxImages + 1)"
+        problemLabel.text = String(numCorrect) + "/" + String(numIncorrect) //String(score)
         
     }
     
@@ -163,14 +166,19 @@ class ViewController: UIViewController {
                 
                 //increment score
                 score += 1
-                problemLabel.text = String(score)
+                numCorrect += 1
             }
             else{ // incorrect
                 flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
                 print("WRONG")
                 print(answer)
                 print(answerList[imageIndex])
+                
+                numIncorrect += 1
+                
             }
+            
+            problemLabel.text = String(numCorrect) + "/" + String(numIncorrect)
             
             goForward()
             
@@ -251,6 +259,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! StopViewController
         controller.results = sender as! [SubmittedData]
+        controller.mode = 1
     }
     
     override func didReceiveMemoryWarning() {

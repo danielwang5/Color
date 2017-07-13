@@ -36,19 +36,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2F-HS-8a6">
-                                <rect key="frame" x="125" y="356" width="125" height="51"/>
+                                <rect key="frame" x="113" y="356" width="149" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Modified"/>
+                                <state key="normal" title="Generated"/>
                                 <connections>
                                     <segue destination="MFV-OO-2It" kind="show" id="m5P-fM-Hz1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-LO-2e8">
-                                <rect key="frame" x="112" y="467" width="151" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Drawing Tests"/>
-                                <connections>
-                                    <segue destination="yUZ-0f-uOB" kind="show" id="pe8-UB-KTH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,13 +48,11 @@
                         <constraints>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Gel-eM-ClO"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Hpq-Rs-vXE"/>
-                            <constraint firstItem="cUg-LO-2e8" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="QLT-d4-6yy"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="top" secondItem="Pm5-N7-EBz" secondAttribute="bottom" constant="64" id="QQn-n4-2hZ"/>
                             <constraint firstItem="Y2F-HS-8a6" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Whf-aG-0MN"/>
                             <constraint firstItem="Pm5-N7-EBz" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="ZxF-fg-MSO"/>
                             <constraint firstItem="Y2F-HS-8a6" firstAttribute="top" secondItem="WIZ-aO-oxl" secondAttribute="bottom" constant="30.5" id="r3b-tV-Guo"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerY" secondItem="KaA-r0-dPw" secondAttribute="centerY" constant="-33.5" id="yiY-cl-asF"/>
-                            <constraint firstItem="BkG-zk-1gm" firstAttribute="top" secondItem="cUg-LO-2e8" secondAttribute="bottom" constant="159" id="zlz-pe-uPE"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -273,6 +263,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BDf-99-GAg"/>
+        <segue reference="yCa-DB-ILp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,34 +16,52 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
     @IBOutlet weak var finalScoreLabel: UILabel!
     
     var results: [SubmittedData] = []
+    var resultsModified: [SubmittedDataModified] = []
+    var mode = 0 //1 is original, 2 is modified
+    
+    
     var messageBody = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var numberCorrect = 0
+        if(mode == 1){
         
-        for item in results{ 
-            if(item.correct){
-                numberCorrect += 1
+            var numberCorrect = 0
+            
+            for item in results{ 
+                if(item.correct){
+                    numberCorrect += 1
+                }
+            }
+            
+            
+            finalScoreLabel.text = "\(numberCorrect) correct!"
+            
+            
+            for i in 0..<results.count{
+                ResultData().saveAnswer(submitted: results[i])
+            }
+        
+        }
+        else if(mode == 2){
+            var numberCorrect = 0
+            
+            for item in resultsModified{
+                if(item.correct){
+                    numberCorrect += 1
+                }
+            }
+            
+            
+            finalScoreLabel.text = "\(numberCorrect) correct!"
+            
+            
+            for i in 0..<results.count{
+                ResultData().saveAnswer(submitted: results[i])
             }
         }
-        
-        
-        finalScoreLabel.text = "\(numberCorrect) correct!"
-        
-        
-        for i in 0..<results.count{
-            ResultData().saveAnswer(submitted: results[i])
-        }
-        
-        //TEST: Fetch User Data
-        
-        //let fetchedData = ResultData().fetchAnswer()
-        
-        //finalScoreLabel.text = ResultData().toString()
-        //"\(fetchedData[fetchedData.count-1].value(forKey: "submittedAnswer")!)"
         
     }
     
