@@ -22,5 +22,13 @@ class StartViewController: UIViewController {
     }
     
     
+    @IBAction func feedbackLink(_ sender: Any) {
+        if let url = URL(string: "https://goo.gl/forms/TQpIBGVNB819pkUw2") {
+            UIApplication.shared.open(url, options: [:]) {
+                boolean in
+                // do something with the boolean
+            }
+        }
+    }
     
 }
