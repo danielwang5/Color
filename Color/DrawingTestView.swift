@@ -53,8 +53,8 @@ class DrawingTestView: UIView{
         let CIRCLE_ITERATIONS:Int = 10000
         let SPACING:Double = 0.5
         
-        let MIN_R:Double = 3;
-        let MAX_R:Double = 8;
+        let MIN_R:Double = 1.5;
+        let MAX_R:Double = 5;
         
         // canvas size
         let WIDTH:Int  = 240;

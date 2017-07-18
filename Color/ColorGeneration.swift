@@ -59,6 +59,13 @@ class ColorGeneration{
             number[2] = background[2] - r3
         }
         
+        background[0] = min(1,max(0,background[0]))
+        background[1] = min(1,max(0,background[1]))
+        background[2] = min(1,max(0,background[2]))
+        number[0] = min(1,max(0,number[0]))
+        number[1] = min(1,max(0,number[1]))
+        number[2] = min(1,max(0,number[2]))
+        
         return [background, number]
     }
 }

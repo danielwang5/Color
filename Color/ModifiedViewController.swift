@@ -156,7 +156,7 @@ class ModifiedViewController: UIViewController {
     
     @IBAction func checkAnswer(_ sender: UITextField) {
         let answerDigits = answerField.text!.digits
-        let answer = answerDigits=="" ?0:Int(answerDigits)!
+        let answer = (answerDigits.characters.count == 0) ?0:Int(answerDigits)!
         
         let timeElapsed:Double = Double(startTime - counter)/100
         
