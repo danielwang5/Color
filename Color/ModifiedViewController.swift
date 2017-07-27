@@ -160,7 +160,7 @@ class ModifiedViewController: UIViewController {
         
         let timeElapsed:Double = Double(startTime - counter)/100
         
-        if(answer != randNum / 10){//if not in the middle of typing answer
+        if(answer != randNum / 10 && answer != 0){//if not in the middle of typing answer
             results.setAns(info: SubmittedDataModified(
                 phoneInf: phoneInfo,
                 orderinGam: nthQuestion,

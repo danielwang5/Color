@@ -140,11 +140,13 @@ class ViewController: UIViewController {
     
 
     @IBAction func checkAnswer(_ sender: UITextField) {
-        let answer = Int(answerField.text!.digits)!
+        
+        let answerDigits = answerField.text!.digits
+        let answer = (answerDigits.characters.count == 0) ?0:Int(answerDigits)!
         
         let timeElapsed:Double = Double(startTime - counter)/100
         
-        if(answer != answerList[imageIndex] / 10){
+        if(answer != answerList[imageIndex] / 10 && answer != 0){
             results.setAns(info: SubmittedData(
                 phoneInf: phoneInfo,
                 orderinGam: nthQuestion,
