@@ -58,8 +58,8 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
             finalScoreLabel.text = "\(numberCorrect) correct!"
             
             
-            for i in 0..<results.count{
-                ResultData().saveAnswer(submitted: results[i])
+            for i in 0..<resultsModified.count{
+                ResultData().saveAnswer(submitted: resultsModified[i])
             }
         }
         

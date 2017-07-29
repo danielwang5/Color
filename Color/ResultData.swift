@@ -111,6 +111,9 @@ class ResultData{
     }
     
     func toString() -> String{
+        
+        print("GGGG")
+        
         let results = fetchAnswer(modified: false)
         let resultsMod = fetchAnswer(modified: true)
         
@@ -119,9 +122,10 @@ class ResultData{
         
         let keyList = ["questionId","correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","phoneId","model","brightness"]
         
-        let keyListMod = ["questionId","correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","phoneId","model","brightness","numberColorR","numberColorG","numberColorB","backgroundColorR","backgroundColorG","backgroundColorB"]
+        let keyListMod = ["correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","phoneId","model","brightness","numberColorR","numberColorG","numberColorB","backgroundColorR","backgroundColorG","backgroundColorB"]
         
         for item in results{
+            
             for key in keyList{
                 out += "\(item.value(forKey: key)!),"
             }

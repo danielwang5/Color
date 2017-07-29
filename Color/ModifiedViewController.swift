@@ -114,7 +114,7 @@ class ModifiedViewController: UIViewController {
         
         answerField.text = "" //"\(answerList[0])"
         
-        problemLabel.text = String(numCorrect) + "/" + String(numIncorrect) //String(score)
+        problemLabel.text = String(numCorrect) + " Correct / " + String(numIncorrect) + " Incorrect"//String(score)
         
         drawNum()
         
@@ -202,7 +202,7 @@ class ModifiedViewController: UIViewController {
                 print(randNum)
             }
             
-            problemLabel.text = String(numCorrect) + "/" + String(numIncorrect)
+            problemLabel.text = String(numCorrect) + " Correct / " + String(numIncorrect) + " Incorrect"
             
             goForward()
             

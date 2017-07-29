@@ -13,7 +13,7 @@ class ColorGeneration{
     let multiplier:Float = 0.9
     
     func getColors(iteration:Int) -> [[Float]]{ //iteration starting from 0
-        var difference = initialDifference * pow(multiplier,Float(iteration))
+        let difference = initialDifference * pow(multiplier,Float(iteration))
         
         var background:[Float] = [0,0,0]
         var number:[Float] = [0,0,0]

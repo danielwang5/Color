@@ -117,7 +117,7 @@ class ViewController: UIViewController {
         
         answerField.text = "" //"\(answerList[0])"
         
-        problemLabel.text = String(numCorrect) + "/" + String(numIncorrect) //String(score)
+        problemLabel.text = String(numCorrect) + " Correct / " + String(numIncorrect) + " Incorrect"
         
     }
     
@@ -180,7 +180,7 @@ class ViewController: UIViewController {
                 
             }
             
-            problemLabel.text = String(numCorrect) + "/" + String(numIncorrect)
+            problemLabel.text = String(numCorrect) + " Correct / " + String(numIncorrect) + " Incorrect"
             
             goForward()
             
