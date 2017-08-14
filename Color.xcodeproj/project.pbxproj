@@ -20,7 +20,7 @@
 		487475EB1E7F79F900F79086 /* DrawingTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487475EA1E7F79F900F79086 /* DrawingTestController.swift */; };
 		48B2D76C1ECC0FC00069929B /* DigitParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2D76B1ECC0FC00069929B /* DigitParams.swift */; };
 		48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F981C81E833F800050C180 /* DrawingTestView.swift */; };
-		48F981CD1E845F0F0050C180 /* KDTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F981CC1E845F0F0050C180 /* KDTree.swift */; };
+		48FC2C761F421689002ACDA1 /* PausedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC2C751F421689002ACDA1 /* PausedViewController.swift */; };
 		48FF36A81EEA19BE00BCB159 /* ModifiedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF36A71EEA19BE00BCB159 /* ModifiedViewController.swift */; };
 		48FF36AA1F01D08B00BCB159 /* DataParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF36A91F01D08B00BCB159 /* DataParams.swift */; };
 		48FF36AC1F1739DB00BCB159 /* ColorGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF36AB1F1739DA00BCB159 /* ColorGeneration.swift */; };
@@ -42,7 +42,7 @@
 		487475EA1E7F79F900F79086 /* DrawingTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestController.swift; sourceTree = "<group>"; };
 		48B2D76B1ECC0FC00069929B /* DigitParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitParams.swift; sourceTree = "<group>"; };
 		48F981C81E833F800050C180 /* DrawingTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestView.swift; sourceTree = "<group>"; };
-		48F981CC1E845F0F0050C180 /* KDTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDTree.swift; sourceTree = "<group>"; };
+		48FC2C751F421689002ACDA1 /* PausedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausedViewController.swift; sourceTree = "<group>"; };
 		48FF36A71EEA19BE00BCB159 /* ModifiedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiedViewController.swift; sourceTree = "<group>"; };
 		48FF36A91F01D08B00BCB159 /* DataParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParams.swift; sourceTree = "<group>"; };
 		48FF36AB1F1739DA00BCB159 /* ColorGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGeneration.swift; sourceTree = "<group>"; };
@@ -83,6 +83,7 @@
 				4857EEE61E3061FD00801CBB /* StartViewController.swift */,
 				4857EED01E2DF25A00801CBB /* ViewController.swift */,
 				48FF36A71EEA19BE00BCB159 /* ModifiedViewController.swift */,
+				48FC2C751F421689002ACDA1 /* PausedViewController.swift */,
 				48FF36AB1F1739DA00BCB159 /* ColorGeneration.swift */,
 				4863AC6A1E43AF1700CDC808 /* StopViewController.swift */,
 				48FF36A91F01D08B00BCB159 /* DataParams.swift */,
@@ -96,7 +97,6 @@
 				4857EEDD1E2DF25A00801CBB /* Info.plist */,
 				4857EED51E2DF25A00801CBB /* Color.xcdatamodeld */,
 				4863AC681E43014500CDC808 /* Info.swift */,
-				48F981CC1E845F0F0050C180 /* KDTree.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -184,7 +184,6 @@
 			files = (
 				487475EB1E7F79F900F79086 /* DrawingTestController.swift in Sources */,
 				4857EEF11E37061800801CBB /* ResultData.swift in Sources */,
-				48F981CD1E845F0F0050C180 /* KDTree.swift in Sources */,
 				4857EED11E2DF25A00801CBB /* ViewController.swift in Sources */,
 				48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */,
 				48FF36A81EEA19BE00BCB159 /* ModifiedViewController.swift in Sources */,
@@ -193,6 +192,7 @@
 				4863AC691E43014500CDC808 /* Info.swift in Sources */,
 				48FF36AA1F01D08B00BCB159 /* DataParams.swift in Sources */,
 				4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */,
+				48FC2C761F421689002ACDA1 /* PausedViewController.swift in Sources */,
 				4857EED71E2DF25A00801CBB /* Color.xcdatamodeld in Sources */,
 				4857EECF1E2DF25A00801CBB /* AppDelegate.swift in Sources */,
 				48FF36AC1F1739DB00BCB159 /* ColorGeneration.swift in Sources */,

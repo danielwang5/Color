@@ -250,6 +250,14 @@ class ModifiedViewController: UIViewController {
         }
     }
     
+    @IBAction func paused(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PausedViewController")
+        vc?.modalPresentationStyle = .overCurrentContext
+        
+        self.present(vc!, animated: true, completion: nil)
+        /*push(vc!, animated: false, completion: nil)*/
+    }
+    
     func finish(){
         
         self.performSegue(withIdentifier: "finishedmodified", sender: self.results.data)
