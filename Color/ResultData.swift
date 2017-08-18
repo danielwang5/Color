@@ -36,6 +36,7 @@ class ResultData{
         person.setValue(submitted.orderInGame, forKey: "orderInGame")
         person.setValue(submitted.submittedAnswer, forKey: "submittedAnswer")
         person.setValue(submitted.timeElapsed, forKey: "timeElapsed")
+        person.setValue(submitted.timeElapsedCurrent, forKey: "timeElapsedCurrent")
         person.setValue(submitted.phoneInfo.phoneId, forKey: "phoneId")
         person.setValue(submitted.phoneInfo.brightness, forKey: "brightness")
         person.setValue(submitted.phoneInfo.model, forKey: "model")
@@ -123,7 +124,7 @@ class ResultData{
         
         let keyList = ["questionId","correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","timeElapsedCurrent","phoneId","model","brightness"]
         
-        let keyListMod = ["correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","phoneId","model","brightness","numberColorR","numberColorG","numberColorB","backgroundColorR","backgroundColorG","backgroundColorB"]
+        let keyListMod = ["correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","timeElapsedCurrent","phoneId","model","brightness","numberColorR","numberColorG","numberColorB","backgroundColorR","backgroundColorG","backgroundColorB"]
         
         for item in results{
             
