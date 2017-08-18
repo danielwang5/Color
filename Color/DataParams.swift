@@ -19,6 +19,7 @@ struct SubmittedDataModified{
     var orderInGame: Int = -1
     var correct: Bool = false
     var timeElapsed: Double = -1.0
+    var timeElapsedCurrent: Double = -1.0
     var phoneInfo: PhoneData = PhoneData()
     
     var numberColorR:Float = -1
@@ -29,13 +30,14 @@ struct SubmittedDataModified{
     var backgroundColorB:Float = -1
 
     
-    init(phoneInf: PhoneData, orderinGam: Int, correctAns: Int, submittedAns: Int, timeElapse: Double, numCol: [Float], backCol:[Float]) {
+    init(phoneInf: PhoneData, orderinGam: Int, correctAns: Int, submittedAns: Int, timeElapse: Double, timeElapsedCurr:Double, numCol: [Float], backCol:[Float]) {
         phoneInfo = phoneInf
         submittedAnswer = submittedAns
         orderInGame = orderinGam
         correctAnswer = correctAns
         correct = correctAns == submittedAns
         timeElapsed = timeElapse
+        timeElapsedCurrent = timeElapsedCurr
         numberColorR = numCol[0]
         numberColorG = numCol[1]
         numberColorB = numCol[2]
@@ -45,7 +47,7 @@ struct SubmittedDataModified{
     }
     
     func toString() -> String{
-        return String(correctAnswer)+","+String(submittedAnswer)+","+String(orderInGame)+","+String(correctAnswer)+","+String(correct)+","+String(timeElapsed)+","+String(phoneInfo.phoneId)+","+String(phoneInfo.model)+","+String(phoneInfo.brightness)+","+String(numberColorR)+","+String(numberColorG)+","+String(numberColorB)+","+String(backgroundColorR)+","+String(backgroundColorG)+","+String(backgroundColorB)
+        return String(correctAnswer)+","+String(submittedAnswer)+","+String(orderInGame)+","+String(correctAnswer)+","+String(correct)+","+String(timeElapsed)+","+String(timeElapsedCurrent)+","+String(phoneInfo.phoneId)+","+String(phoneInfo.model)+","+String(phoneInfo.brightness)+","+String(numberColorR)+","+String(numberColorG)+","+String(numberColorB)+","+String(backgroundColorR)+","+String(backgroundColorG)+","+String(backgroundColorB)
         
     }
     
@@ -61,9 +63,10 @@ struct SubmittedData{
     var orderInGame: Int = -1
     var correct: Bool = false
     var timeElapsed: Double = -1.0
+    var timeElapsedCurrent: Double = -1.0
     var phoneInfo: PhoneData = PhoneData()
     
-    init(phoneInf: PhoneData, orderinGam: Int, quesId: Int, submittedAns: Int, timeElapse: Double) {
+    init(phoneInf: PhoneData, orderinGam: Int, quesId: Int, submittedAns: Int, timeElapse: Double, timeElapsedCurr: Double) {
         phoneInfo = phoneInf
         questionId = quesId
         submittedAnswer = submittedAns
@@ -71,10 +74,11 @@ struct SubmittedData{
         correctAnswer = answerList[quesId]
         correct = answerList[quesId] == submittedAns
         timeElapsed = timeElapse
+        timeElapsedCurrent = timeElapsedCurr
     }
     
     func toString() -> String{
-        return String(questionId)+","+String(correctAnswer)+","+String(submittedAnswer)+","+String(orderInGame)+","+String(correctAnswer)+","+String(correct)+","+String(timeElapsed)+","+String(phoneInfo.phoneId)+","+String(phoneInfo.model)+","+String(phoneInfo.brightness)
+        return String(questionId)+","+String(correctAnswer)+","+String(submittedAnswer)+","+String(orderInGame)+","+String(correctAnswer)+","+String(correct)+","+String(timeElapsed)+","+String(timeElapsedCurrent)+","+String(phoneInfo.phoneId)+","+String(phoneInfo.model)+","+String(phoneInfo.brightness)
         
     }
     

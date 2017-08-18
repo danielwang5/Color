@@ -99,7 +99,7 @@
                         <viewControllerLayoutGuide type="top" id="yzv-TL-UFg"/>
                         <viewControllerLayoutGuide type="bottom" id="ryI-pe-SAK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wxn-AD-3TX">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="pausedView" id="wxn-AD-3TX" customClass="PausedView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

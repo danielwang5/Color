@@ -75,6 +75,8 @@ class ViewController: UIViewController {
     var numCorrect:Int = 0
     var numIncorrect:Int = 0
     
+    var timeElapsedCurrent:Int = 0 //number of frames elapsed
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -129,6 +131,9 @@ class ViewController: UIViewController {
         }
         
         counter -= 1
+        
+        timeElapsedCurrent += 1
+        
         updateBar(prog: Float(counter)/Float(startTime))
         //timerLabel.text = "\(Double(counter)/100)"
     }
@@ -144,15 +149,23 @@ class ViewController: UIViewController {
         let answerDigits = answerField.text!.digits
         let answer = (answerDigits.characters.count == 0) ?0:Int(answerDigits)!
         
-        let timeElapsed:Double = Double(startTime - counter)/100
-        
-        if(answer != answerList[imageIndex] / 10 && answer != 0){
+        if(answer != answerList[imageIndex] / 10 && answerList[imageIndex] != 0){
+            
+            
+            let timeElapsed:Double = Double(startTime - counter)/100
+            
+            let realTimeElapsedCurrent:Double = Double(timeElapsedCurrent)/100
+            timeElapsedCurrent = 0
+            
+            //print(realTimeElapsedCurrent)
+            
             results.setAns(info: SubmittedData(
                 phoneInf: phoneInfo,
                 orderinGam: nthQuestion,
                 quesId: imageIndex,
                 submittedAns: answer,
-                timeElapse: timeElapsed
+                timeElapse: timeElapsed,
+                timeElapsedCurr:realTimeElapsedCurrent
             ))
             
             

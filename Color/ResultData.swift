@@ -77,6 +77,7 @@ class ResultData{
         person.setValue(submitted.questionId, forKey: "questionId")
         person.setValue(submitted.submittedAnswer, forKey: "submittedAnswer")
         person.setValue(submitted.timeElapsed, forKey: "timeElapsed")
+        person.setValue(submitted.timeElapsedCurrent, forKey: "timeElapsedCurrent")
         person.setValue(submitted.phoneInfo.phoneId, forKey: "phoneId")
         person.setValue(submitted.phoneInfo.brightness, forKey: "brightness")
         person.setValue(submitted.phoneInfo.model, forKey: "model")
@@ -120,7 +121,7 @@ class ResultData{
         var out:String = ""
         
         
-        let keyList = ["questionId","correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","phoneId","model","brightness"]
+        let keyList = ["questionId","correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","timeElapsedCurrent","phoneId","model","brightness"]
         
         let keyListMod = ["correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","phoneId","model","brightness","numberColorR","numberColorG","numberColorB","backgroundColorR","backgroundColorG","backgroundColorB"]
         

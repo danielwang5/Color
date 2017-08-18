@@ -80,9 +80,18 @@ class ModifiedViewController: UIViewController {
     var numCorrect:Int = 0
     var numIncorrect:Int = 0
     
+    var timeElapsedCurrent:Int = 0 //number of frames elapsed
+    
+    //Pause View
+    //var mycustomView: UIView! = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //Pause View
+        //mycustomView.isHidden = true
         
         //plateview redraw (currently useless?)
         plateView.clearsContextBeforeDrawing = true
@@ -145,6 +154,9 @@ class ModifiedViewController: UIViewController {
         }
         
         counter -= 1
+        
+        timeElapsedCurrent += 1
+        
         updateBar(prog: Float(counter)/Float(startTime))
     }
     
@@ -160,13 +172,21 @@ class ModifiedViewController: UIViewController {
         
         let timeElapsed:Double = Double(startTime - counter)/100
         
-        if(answer != randNum / 10 && answer != 0){//if not in the middle of typing answer
+        if(answer != randNum / 10 && randNum != 0){//if not in the middle of typing answer
+            
+            let timeElapsed:Double = Double(startTime - counter)/100
+            
+            let realTimeElapsedCurrent:Double = Double(timeElapsedCurrent)/100
+            timeElapsedCurrent = 0
+            
+            
             results.setAns(info: SubmittedDataModified(
                 phoneInf: phoneInfo,
                 orderinGam: nthQuestion,
                 correctAns: randNum,
                 submittedAns: answer,
                 timeElapse: timeElapsed,
+                timeElapsedCurr:realTimeElapsedCurrent,
                 numCol: numCol,
                 backCol: backCol
             ))
@@ -255,7 +275,22 @@ class ModifiedViewController: UIViewController {
         vc?.modalPresentationStyle = .overCurrentContext
         
         self.present(vc!, animated: true, completion: nil)
-        /*push(vc!, animated: false, completion: nil)*/
+        
+        
+            
+            //self.view.addSubview(mycustomView)
+            
+            //mycustomView.isHidden = false
+
+            
+            /*let okayButton = UIButton(frame: CGRect(x: 40, y: 100, width: 50, height: 50))
+            
+            // here we are adding the button its superView
+            mycustomView.addSubview(okayButton)
+            
+            okayButton.addTarget(self, action: #selector(self.okButtonImplementation:), forControlEvents:.TouchUpInside)*/
+        
+        
     }
     
     func finish(){
