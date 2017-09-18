@@ -42,6 +42,9 @@ class ModifiedViewController: UIViewController {
     
     @IBOutlet weak var problemLabel: UILabel!
     
+    @IBOutlet weak var submitButton: UIButton!
+    
+    
     // DATA!
     let modelName = UIDevice.current.modelName
     let brightness = Double(UIScreen.main.brightness)
@@ -166,7 +169,7 @@ class ModifiedViewController: UIViewController {
     }
     
     
-    @IBAction func checkAnswer(_ sender: UITextField) {
+    @IBAction func checkAnswer(_ sender: Any) {
         let answerDigits = answerField.text!.digits
         let answer = (answerDigits.characters.count == 0) ?0:Int(answerDigits)!
         

@@ -179,15 +179,28 @@
                                             <constraint firstAttribute="height" constant="240" id="jUH-Oz-5w9"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNd-Yh-xGh">
                                         <rect key="frame" x="0.0" y="322.5" width="240" height="48"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="editingChanged" id="XcL-Hp-fBx"/>
-                                        </connections>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-7k-KAF">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="48"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgI-vL-Eot">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="gTK-wj-V49"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xQE-0X-lsX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="bkt-3c-R9W"/>
@@ -206,6 +219,7 @@
                         <outlet property="answerField" destination="Vdc-7k-KAF" id="zM2-9E-H2m"/>
                         <outlet property="plateView" destination="rd2-E4-SKO" id="hVg-k9-vhH"/>
                         <outlet property="problemLabel" destination="DTH-l1-EA4" id="ApM-G3-Gbp"/>
+                        <outlet property="submitButton" destination="lgI-vL-Eot" id="OkS-rR-lOz"/>
                         <outlet property="timerBar" destination="zbq-nZ-RRj" id="vJv-K2-Ir6"/>
                         <segue destination="poL-iH-GtU" kind="show" identifier="finished" id="BDf-99-GAg"/>
                     </connections>
@@ -246,15 +260,28 @@
                                             <constraint firstAttribute="width" constant="240" id="Rac-gw-ZTl"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-Kk-YqC">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ea-o6-Qox">
                                         <rect key="frame" x="0.0" y="322.5" width="240" height="48"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="checkAnswer:" destination="MFV-OO-2It" eventType="editingChanged" id="pQK-ff-wmU"/>
-                                        </connections>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-Kk-YqC">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="48"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLN-xM-y0Q">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="yoU-h4-u0Q"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="checkAnswer:" destination="MFV-OO-2It" eventType="touchUpInside" id="KgI-ZJ-m3m"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="mYj-Hq-kWF"/>
@@ -282,6 +309,7 @@
                         <outlet property="answerField" destination="KzO-Kk-YqC" id="vAh-Ig-LM0"/>
                         <outlet property="plateView" destination="BK7-Oy-3VR" id="SXT-6W-J47"/>
                         <outlet property="problemLabel" destination="EdE-h1-t6d" id="4pz-h4-ymN"/>
+                        <outlet property="submitButton" destination="tLN-xM-y0Q" id="gZr-ZF-88z"/>
                         <outlet property="timerBar" destination="maA-A4-Xyd" id="bdw-o0-eQS"/>
                         <segue destination="poL-iH-GtU" kind="show" identifier="finishedmodified" id="yCa-DB-ILp"/>
                     </connections>
