@@ -66,6 +66,26 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
     }
     
     //MAIL FUNCTIONS
+    func mailComposeController(controller: MFMailComposeViewController,
+                               didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResult.cancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResult.saved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResult.sent.rawValue: //delete stuff if sent
+            print("Mail sent")
+            deleteRecords(tableName: "Results")
+            deleteRecords(tableName: "ResultsModified")
+        case MFMailComposeResult.failed.rawValue:
+            print("Mail sent failure: %@", [error!.localizedDescription])
+        default:
+            break
+        }
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func sendEmailButtonTapped(sender: AnyObject) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
@@ -91,8 +111,11 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         mailComposerVC.setSubject("Color Test Results")
         mailComposerVC.setMessageBody(messageBody, isHTML: false)
         
+        
         return mailComposerVC
     }
+    
+    
     
     func showSendMailErrorAlert() {
         let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
@@ -109,7 +132,21 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func deleteRecords(tableName:String){ //deletes records from named table
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: tableName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.execute(deleteRequest)
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+    }
     
     @IBAction func feedbackLink(_ sender: Any) {
         if let url = URL(string: "https://goo.gl/forms/TQpIBGVNB819pkUw2") {
