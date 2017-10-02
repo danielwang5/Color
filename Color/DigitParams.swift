@@ -221,7 +221,7 @@ class Number: Shape{
     
     func within(p: Point) -> Bool {
         if(value <= 9){
-            return Digit(value: value).within(p: p)
+            return Digit(value: value).within(p: Point(xx: p.x * 5.0/3.0 - 1.0/3.0, yy: p.y * 5.0/3.0 - 1.0/3.0))
         }
         else{// Digits occupy:
             //
@@ -233,10 +233,10 @@ class Number: Shape{
                 return false;
             }
             else if(p.x < 0.5){ //first digit (tens)
-                return Digit(value: tens).within(p: Point(xx: p.x * 2, yy: p.y * 2 - 0.5))
+                return Digit(value: tens).within(p: Point(xx: p.x * 5.0/3.0, yy: p.y * 5.0/3.0 - 1.0/3.0))
             }
             else{ //second digit (ones)
-                return Digit(value: ones).within(p: Point(xx: p.x * 2 - 1, yy: p.y * 2 - 0.5))
+                return Digit(value: ones).within(p: Point(xx: p.x * 5.0/3.0 - 2.0/3.0, yy: p.y * 5.0/3.0 - 1.0/3.0))
             }
         }
     }

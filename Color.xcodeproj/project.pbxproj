@@ -140,7 +140,7 @@
 				TargetAttributes = {
 					4857EECA1E2DF25A00801CBB = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = CYEJ87T75Q;
+						DevelopmentTeam = X753V7PNXY;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -320,10 +320,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CYEJ87T75Q;
+				DEVELOPMENT_TEAM = X753V7PNXY;
 				INFOPLIST_FILE = Color/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.danielw.Color;
+				PRODUCT_BUNDLE_IDENTIFIER = org.danielw.ColorTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -336,10 +337,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CYEJ87T75Q;
+				DEVELOPMENT_TEAM = X753V7PNXY;
 				INFOPLIST_FILE = Color/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.danielw.Color;
+				PRODUCT_BUNDLE_IDENTIFIER = org.danielw.ColorTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

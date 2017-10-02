@@ -175,7 +175,7 @@ class ModifiedViewController: UIViewController {
         
         let timeElapsed:Double = Double(startTime - counter)/100
         
-        if(answer != randNum / 10 && randNum != 0){//if not in the middle of typing answer
+        if((answer != randNum / 10 && randNum != 0) || (answer == 0 && randNum == 0)){//if not in the middle of typing answer
             
             let timeElapsed:Double = Double(startTime - counter)/100
             
