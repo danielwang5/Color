@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/StopViewController.swift"
-            timestampString = "529716993.884027"
+            timestampString = "529817703.126186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "configuredMailComposeViewController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/ModifiedViewController.swift"
-            timestampString = "518678559.485252"
+            timestampString = "529817703.126186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -296,11 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/ModifiedViewController.swift"
-            timestampString = "518906718.092865"
+            timestampString = "529817703.126186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "init(coder:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/ModifiedViewController.swift"
-            timestampString = "519025978.514506"
+            timestampString = "529817703.126186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "ModifiedViewController"
             landmarkType = "3">
             <Locations>
@@ -376,11 +376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/ModifiedViewController.swift"
-            timestampString = "527445755.657058"
+            timestampString = "529817703.126186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "finish()"
             landmarkType = "7">
          </BreakpointContent>
@@ -408,12 +408,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/ModifiedViewController.swift"
-            timestampString = "527445755.657058"
+            timestampString = "529817703.126186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "paused(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Color/StartViewController.swift"
+            timestampString = "529817446.440523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "gameCenterViewControllerDidFinish(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

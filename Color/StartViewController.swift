@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GameKit
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, GKGameCenterControllerDelegate{
 
     
     override func viewDidLoad() {
@@ -21,6 +22,17 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController)
+    {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func leaderboardLink(_ sender: Any) {
+        let vc = self.view?.window?.rootViewController
+        let gc = GKGameCenterViewController()
+        gc.gameCenterDelegate = self
+        vc?.present(gc, animated: true, completion: nil)
+    }
     
     @IBAction func feedbackLink(_ sender: Any) {
         if let url = URL(string: "https://goo.gl/forms/TQpIBGVNB819pkUw2") {

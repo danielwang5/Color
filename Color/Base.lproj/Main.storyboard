@@ -54,11 +54,20 @@
                                     <action selector="feedbackLink:" destination="zyR-4m-f11" eventType="touchUpInside" id="WYY-49-Z8t"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouf-U0-7zn">
+                                <rect key="frame" x="16" y="612" width="93" height="30"/>
+                                <state key="normal" title="Leaderboard"/>
+                                <connections>
+                                    <action selector="leaderboardLink:" destination="zyR-4m-f11" eventType="touchUpInside" id="qnn-TM-Co0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Gel-eM-ClO"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Hpq-Rs-vXE"/>
+                            <constraint firstItem="Ouf-U0-7zn" firstAttribute="leading" secondItem="KaA-r0-dPw" secondAttribute="leadingMargin" id="MDm-gr-pnp"/>
+                            <constraint firstItem="BkG-zk-1gm" firstAttribute="top" secondItem="Ouf-U0-7zn" secondAttribute="bottom" constant="25" id="NLN-x6-Hn0"/>
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="top" secondItem="Pm5-N7-EBz" secondAttribute="bottom" constant="64" id="QQn-n4-2hZ"/>
                             <constraint firstItem="Y2F-HS-8a6" firstAttribute="centerX" secondItem="KaA-r0-dPw" secondAttribute="centerX" id="Whf-aG-0MN"/>
                             <constraint firstItem="YpB-gT-Q0L" firstAttribute="trailing" secondItem="KaA-r0-dPw" secondAttribute="trailingMargin" id="YLG-IC-jBo"/>

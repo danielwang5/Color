@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 import MessageUI
+import GameKit
 
 class StopViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
@@ -26,9 +27,11 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        var numberCorrect = 0
+        
         if(mode == 1){
         
-            var numberCorrect = 0
+            
             
             for item in results{ 
                 if(item.correct){
@@ -46,7 +49,6 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
         }
         else if(mode == 2){
-            var numberCorrect = 0
             
             for item in resultsModified{
                 if(item.correct){
@@ -63,6 +65,22 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
             }
         }
         
+        submitToLeaderboard(mode: mode, score: numberCorrect)
+        
+    }
+    
+    //SUBMIT TO LEADERBOARD
+    func submitToLeaderboard(mode:Int, score:Int){
+        let leaderboardName = (mode == 1) ? "standardTest" : "generatedTest"
+        let scoreObj = GKScore(leaderboardIdentifier: leaderboardName)
+        scoreObj.context = 0
+        scoreObj.value = Int64(score)
+        GKScore.report([scoreObj], withCompletionHandler: {(error) -> Void in
+            let alert = UIAlertView(title: "Success",
+                message: "Score updated",
+                delegate: self,
+                cancelButtonTitle: "Ok")
+        })
     }
     
     //MAIL FUNCTIONS

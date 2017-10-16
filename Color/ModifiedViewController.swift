@@ -304,18 +304,24 @@ class ModifiedViewController: UIViewController {
     }
     
     func playSound(soundName:String) {
-        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
+            print("url not found")
+            return
+        }
         
         do {
+            /// this codes for making this app ready to takeover the device audio
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
+            /// change fileTypeHint according to the type of your audio file (you can omit this)
             
+            let player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
+            
+            // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
             player.play()
-        } catch let error {
-            print(error.localizedDescription)
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
         }
     }
     
