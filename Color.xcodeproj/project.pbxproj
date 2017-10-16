@@ -18,6 +18,8 @@
 		4863AC691E43014500CDC808 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863AC681E43014500CDC808 /* Info.swift */; };
 		4863AC6B1E43AF1700CDC808 /* StopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4863AC6A1E43AF1700CDC808 /* StopViewController.swift */; };
 		487475EB1E7F79F900F79086 /* DrawingTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487475EA1E7F79F900F79086 /* DrawingTestController.swift */; };
+		4892FD121F92E35800A75A83 /* Ding-sfx.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4892FD111F92E35800A75A83 /* Ding-sfx.mp3 */; };
+		4892FD161F92E4B600A75A83 /* Buzz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4892FD151F92E4B600A75A83 /* Buzz.mp3 */; };
 		48B2D76C1ECC0FC00069929B /* DigitParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2D76B1ECC0FC00069929B /* DigitParams.swift */; };
 		48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F981C81E833F800050C180 /* DrawingTestView.swift */; };
 		48FC2C761F421689002ACDA1 /* PausedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC2C751F421689002ACDA1 /* PausedViewController.swift */; };
@@ -40,6 +42,8 @@
 		4863AC681E43014500CDC808 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		4863AC6A1E43AF1700CDC808 /* StopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopViewController.swift; sourceTree = "<group>"; };
 		487475EA1E7F79F900F79086 /* DrawingTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestController.swift; sourceTree = "<group>"; };
+		4892FD111F92E35800A75A83 /* Ding-sfx.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ding-sfx.mp3"; sourceTree = "<group>"; };
+		4892FD151F92E4B600A75A83 /* Buzz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Buzz.mp3; sourceTree = "<group>"; };
 		48B2D76B1ECC0FC00069929B /* DigitParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitParams.swift; sourceTree = "<group>"; };
 		48F981C81E833F800050C180 /* DrawingTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestView.swift; sourceTree = "<group>"; };
 		48FC2C751F421689002ACDA1 /* PausedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausedViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		4857EECD1E2DF25A00801CBB /* Color */ = {
 			isa = PBXGroup;
 			children = (
+				4892FD101F92E34D00A75A83 /* Sounds */,
 				4857EEE31E2DF9AE00801CBB /* Images */,
 				4857EECE1E2DF25A00801CBB /* AppDelegate.swift */,
 				4857EEE61E3061FD00801CBB /* StartViewController.swift */,
@@ -106,6 +111,15 @@
 			children = (
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		4892FD101F92E34D00A75A83 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4892FD151F92E4B600A75A83 /* Buzz.mp3 */,
+				4892FD111F92E35800A75A83 /* Ding-sfx.mp3 */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +185,8 @@
 			files = (
 				4857EEDC1E2DF25A00801CBB /* LaunchScreen.storyboard in Resources */,
 				4857EED91E2DF25A00801CBB /* Assets.xcassets in Resources */,
+				4892FD161F92E4B600A75A83 /* Buzz.mp3 in Resources */,
+				4892FD121F92E35800A75A83 /* Ding-sfx.mp3 in Resources */,
 				4857EED41E2DF25A00801CBB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

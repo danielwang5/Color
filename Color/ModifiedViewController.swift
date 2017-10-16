@@ -27,6 +27,7 @@
 
 import UIKit
 import Foundation
+import AVFoundation
 
 class ModifiedViewController: UIViewController {
     
@@ -204,6 +205,9 @@ class ModifiedViewController: UIViewController {
                 flashColor(red: oRed - 0.3,green: oGreen + 0.1,blue: oBlue - 0.2,alpha: oAlpha)
                 print("CORRECT")
                 
+                //play sound
+                playSound(soundName: "Ding-sfx")
+                
                 //add time
                 counter += 100
                 
@@ -218,6 +222,9 @@ class ModifiedViewController: UIViewController {
                 
                 difficulty -= 1
                 numIncorrect += 1
+                
+                //play sound
+                playSound(soundName: "Buzz")
                 
                 flashColor(red: oRed + 0.1,green: oGreen - 0.1,blue: oBlue - 0.1,alpha: oAlpha)
                 print("WRONG")
@@ -294,6 +301,22 @@ class ModifiedViewController: UIViewController {
             okayButton.addTarget(self, action: #selector(self.okButtonImplementation:), forControlEvents:.TouchUpInside)*/
         
         
+    }
+    
+    func playSound(soundName:String) {
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     func finish(){

@@ -68,6 +68,7 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
     //MAIL FUNCTIONS
     func mailComposeController(controller: MFMailComposeViewController,
                                didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        print("Decide mail")
         switch result.rawValue {
         case MFMailComposeResult.cancelled.rawValue:
             print("Mail cancelled")
@@ -134,6 +135,8 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
     }
     
     func deleteRecords(tableName:String){ //deletes records from named table
+        
+        print("DELETING...")
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext

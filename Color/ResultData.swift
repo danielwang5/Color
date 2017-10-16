@@ -131,12 +131,14 @@ class ResultData{
             for key in keyList{
                 out += "\(item.value(forKey: key)!),"
             }
+            out += "\n"
         }
         
         for item in resultsMod{
             for key in keyListMod{
                 out += "\(item.value(forKey: key)!),"
             }
+            out += "\n"
         }
         
         return out

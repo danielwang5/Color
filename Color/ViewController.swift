@@ -27,6 +27,7 @@
 
 import UIKit
 import Foundation
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -69,7 +70,10 @@ class ViewController: UIViewController {
     var oBlue:Float = 0.8
     var oAlpha:Float = 1.0
     
-     //The Answers!!!
+    //Sound Effect Player
+    var player: AVAudioPlayer?
+    
+    //The Answers!!!
     
     var nthQuestion = 0
     var imageIndex: NSInteger = 0
@@ -179,6 +183,9 @@ class ViewController: UIViewController {
                 flashColor(red: oRed - 0.3,green: oGreen + 0.1,blue: oBlue - 0.2,alpha: oAlpha)
                 print("CORRECT")
                 
+                //play sound
+                playSound(soundName: "Ding-sfx")
+                
                 //add time
                 counter += 100
                 
@@ -191,6 +198,9 @@ class ViewController: UIViewController {
                 print("WRONG")
                 print(answer)
                 print(answerList[imageIndex])
+                
+                //play sound
+                playSound(soundName: "Buzz")
                 
                 numIncorrect += 1
                 
@@ -260,6 +270,22 @@ class ViewController: UIViewController {
             }
 
             //answerField.text = "\(results.data[imageIndex].correctAnswer)"
+        }
+    }
+    
+    func playSound(soundName:String) {
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
