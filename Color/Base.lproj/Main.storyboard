@@ -77,6 +77,9 @@
                             <constraint firstItem="WIZ-aO-oxl" firstAttribute="centerY" secondItem="KaA-r0-dPw" secondAttribute="centerY" constant="-33.5" id="yiY-cl-asF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Pm5-N7-EBz" id="UAX-fA-ipk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSW-94-rLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

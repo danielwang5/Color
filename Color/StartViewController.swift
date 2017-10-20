@@ -11,10 +11,42 @@ import GameKit
 
 class StartViewController: UIViewController, GKGameCenterControllerDelegate{
 
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        authenticateLocalPlayer()
+        
+        //introAnimation()
+    }
+    
+    var gameCenterEnabled = false
+    var leaderboardIdentifier = ""
+    
+    func authenticateLocalPlayer() {
+        let localPlayer = GKLocalPlayer()
+        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+            if viewController != nil {
+                self.present(viewController!, animated: true, completion: nil)
+            } else {
+                if localPlayer.isAuthenticated {
+                    self.gameCenterEnabled = true
+                    
+                    localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifier, error) -> Void in
+                        if error != nil {
+                            
+                        } else {
+                            self.leaderboardIdentifier = leaderboardIdentifier!
+                        }
+                    })
+                    
+                } else {
+                    self.gameCenterEnabled = false
+                }
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,11 +59,21 @@ class StartViewController: UIViewController, GKGameCenterControllerDelegate{
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
     
+    func introAnimation() { //FIX
+        UIView.transition(with: self.view,
+            duration: 1.0,
+            options: [.curveEaseInOut],
+            animations: {
+                self.titleLabel.center.y = 0
+        }, completion: nil)
+        
+    }
+    
     @IBAction func leaderboardLink(_ sender: Any) {
-        let vc = self.view?.window?.rootViewController
+        let vc = self
         let gc = GKGameCenterViewController()
         gc.gameCenterDelegate = self
-        vc?.present(gc, animated: true, completion: nil)
+        vc.present(gc, animated: true, completion: nil)
     }
     
     @IBAction func feedbackLink(_ sender: Any) {

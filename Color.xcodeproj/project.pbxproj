@@ -21,6 +21,7 @@
 		4892FD121F92E35800A75A83 /* Ding-sfx.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4892FD111F92E35800A75A83 /* Ding-sfx.mp3 */; };
 		4892FD161F92E4B600A75A83 /* Buzz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4892FD151F92E4B600A75A83 /* Buzz.mp3 */; };
 		48B2D76C1ECC0FC00069929B /* DigitParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2D76B1ECC0FC00069929B /* DigitParams.swift */; };
+		48DF48BA1F9A7A190011169B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DF48B91F9A7A190011169B /* GameKit.framework */; };
 		48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F981C81E833F800050C180 /* DrawingTestView.swift */; };
 		48FC2C761F421689002ACDA1 /* PausedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC2C751F421689002ACDA1 /* PausedViewController.swift */; };
 		48FF36A81EEA19BE00BCB159 /* ModifiedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF36A71EEA19BE00BCB159 /* ModifiedViewController.swift */; };
@@ -45,6 +46,7 @@
 		4892FD111F92E35800A75A83 /* Ding-sfx.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ding-sfx.mp3"; sourceTree = "<group>"; };
 		4892FD151F92E4B600A75A83 /* Buzz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Buzz.mp3; sourceTree = "<group>"; };
 		48B2D76B1ECC0FC00069929B /* DigitParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitParams.swift; sourceTree = "<group>"; };
+		48DF48B91F9A7A190011169B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		48F981C81E833F800050C180 /* DrawingTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestView.swift; sourceTree = "<group>"; };
 		48FC2C751F421689002ACDA1 /* PausedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausedViewController.swift; sourceTree = "<group>"; };
 		48FF36A71EEA19BE00BCB159 /* ModifiedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiedViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48DF48BA1F9A7A190011169B /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +71,7 @@
 			children = (
 				4857EECD1E2DF25A00801CBB /* Color */,
 				4857EECC1E2DF25A00801CBB /* Products */,
+				48DF48B81F9A7A190011169B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +126,14 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		48DF48B81F9A7A190011169B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48DF48B91F9A7A190011169B /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +169,11 @@
 						DevelopmentTeam = X753V7PNXY;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

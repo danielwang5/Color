@@ -424,11 +424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/StartViewController.swift"
-            timestampString = "529817446.440523"
+            timestampString = "530218867.710584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "gameCenterViewControllerDidFinish(_:)"
             landmarkType = "7">
          </BreakpointContent>
