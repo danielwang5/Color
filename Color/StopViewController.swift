@@ -112,6 +112,9 @@ class StopViewController: UIViewController, MFMailComposeViewControllerDelegate 
         } else {
             self.showSendMailErrorAlert()
         }
+        
+        deleteRecords(tableName: "Results")
+        deleteRecords(tableName: "ResultsModified")
     }
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {

@@ -126,14 +126,33 @@ class ResultData{
         
         let keyListMod = ["correctAnswer","submittedAnswer","orderInGame","correctAnswer","correct","timeElapsed","timeElapsedCurrent","phoneId","model","brightness","numberColorR","numberColorG","numberColorB","backgroundColorR","backgroundColorG","backgroundColorB"]
         
+        // CLASSIC TEST
+        
+        //header
+        for key in keyList{
+            out += "\(key),"
+        }
+        out += "\n"
+        
+        //data
         for item in results{
-            
             for key in keyList{
                 out += "\(item.value(forKey: key)!),"
             }
             out += "\n"
         }
         
+        out += "\n\n"
+        
+        // GENERATED TEST
+        
+        //header
+        for key in keyListMod{
+            out += "\(key),"
+        }
+        out += "\n"
+        
+        //data
         for item in resultsMod{
             for key in keyListMod{
                 out += "\(item.value(forKey: key)!),"

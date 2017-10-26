@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color/StopViewController.swift"
-            timestampString = "529817703.126186"
+            timestampString = "530580543.64729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "configuredMailComposeViewController()"
             landmarkType = "7">
          </BreakpointContent>
