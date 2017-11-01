@@ -219,6 +219,16 @@
                                     <constraint firstAttribute="width" constant="240" id="oIu-Ff-TLw"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xah-kO-K1p">
+                                <rect key="frame" x="24" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="22"/>
+                                <state key="normal" title="I I"/>
+                                <connections>
+                                    <action selector="paused:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YpE-Ho-sI6"/>
+                                    <segue destination="Lf7-qU-tbP" kind="presentation" id="8nF-PZ-fwp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -229,6 +239,7 @@
                     </view>
                     <connections>
                         <outlet property="answerField" destination="Vdc-7k-KAF" id="zM2-9E-H2m"/>
+                        <outlet property="paused" destination="Xah-kO-K1p" id="ryS-oB-698"/>
                         <outlet property="plateView" destination="rd2-E4-SKO" id="hVg-k9-vhH"/>
                         <outlet property="problemLabel" destination="DTH-l1-EA4" id="ApM-G3-Gbp"/>
                         <outlet property="submitButton" destination="lgI-vL-Eot" id="OkS-rR-lOz"/>
@@ -305,7 +316,7 @@
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="22"/>
                                 <state key="normal" title="I I"/>
                                 <connections>
-                                    <action selector="paused:" destination="MFV-OO-2It" eventType="touchUpInside" id="Fcd-FF-5fW"/>
+                                    <segue destination="Lf7-qU-tbP" kind="presentation" identifier="pausedmodified" id="x7L-8p-siI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -343,20 +354,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeO-Ts-ErC">
-                                <rect key="frame" x="149.5" y="318.5" width="76" height="30"/>
+                                <rect key="frame" x="128" y="313" width="119" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Main Menu"/>
                                 <connections>
                                     <segue destination="zyR-4m-f11" kind="show" identifier="backToMenu" id="B6X-PY-yms"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpT-K0-akb">
-                                <rect key="frame" x="165" y="237.5" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="155" y="221.5" width="66.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Ry-k4a">
-                                <rect key="frame" x="151.5" y="356.5" width="72" height="30"/>
+                                <rect key="frame" x="131.5" y="371" width="112" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Send Data"/>
                                 <connections>
                                     <action selector="sendEmailButtonTappedWithSender:" destination="poL-iH-GtU" eventType="touchUpInside" id="Lse-U4-oaE"/>
@@ -378,6 +391,7 @@
                             <constraint firstItem="MeO-Ts-ErC" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="E5r-hy-pVt"/>
                             <constraint firstItem="5pZ-Ry-k4a" firstAttribute="top" secondItem="MeO-Ts-ErC" secondAttribute="bottom" constant="8" id="HOR-UG-rM9"/>
                             <constraint firstItem="WpT-K0-akb" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="Ien-f0-a1P"/>
+                            <constraint firstItem="5pZ-Ry-k4a" firstAttribute="top" secondItem="MeO-Ts-ErC" secondAttribute="bottom" constant="17" id="MTS-OC-6Xm"/>
                             <constraint firstItem="MeO-Ts-ErC" firstAttribute="top" secondItem="WpT-K0-akb" secondAttribute="bottom" constant="60" id="NC5-B0-1cq"/>
                             <constraint firstItem="5pZ-Ry-k4a" firstAttribute="centerX" secondItem="fHM-da-Pu1" secondAttribute="centerX" id="dSi-su-f5O"/>
                             <constraint firstItem="MeO-Ts-ErC" firstAttribute="centerY" secondItem="fHM-da-Pu1" secondAttribute="centerY" id="fbW-4m-eJW"/>
@@ -396,6 +410,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MyP-fh-tEV"/>
+        <segue reference="x7L-8p-siI"/>
         <segue reference="yCa-DB-ILp"/>
     </inferredMetricsTieBreakers>
 </document>

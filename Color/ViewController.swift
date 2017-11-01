@@ -60,6 +60,7 @@ class ViewController: UIViewController {
     var startTime:Int = 3000 //in centiseconds
     var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
+    var isPaused:Bool = false
     
     //Score
     var score:Int = 0
@@ -131,18 +132,19 @@ class ViewController: UIViewController {
     }
     
     func timerAction() {
-        
-        if(counter <= 0){
-            timer.invalidate()
-            finish()
+        if(!isPaused){
+            if(counter <= 0){
+                timer.invalidate()
+                finish()
+            }
+            
+            counter -= 1
+            
+            timeElapsedCurrent += 1
+            
+            updateBar(prog: Float(counter)/Float(startTime))
+            //timerLabel.text = "\(Double(counter)/100)"
         }
-        
-        counter -= 1
-        
-        timeElapsedCurrent += 1
-        
-        updateBar(prog: Float(counter)/Float(startTime))
-        //timerLabel.text = "\(Double(counter)/100)"
     }
 
     
@@ -273,6 +275,14 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func paused(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PausedViewController")
+        vc?.modalPresentationStyle = .overCurrentContext
+        
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
     func playSound(soundName:String) {
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
         
@@ -280,8 +290,8 @@ class ViewController: UIViewController {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
+            let player = try AVAudioPlayer(contentsOf: url)
+            //guard let player = player else { return }
             
             player.play()
         } catch let error {
@@ -301,9 +311,16 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! StopViewController
-        controller.results = sender as! [SubmittedData]
-        controller.mode = 1
+        if (segue.identifier == "finished"){
+            let controller = segue.destination as! StopViewController
+            controller.results = sender as! [SubmittedData]
+            controller.mode = 1
+        }
+        else if (segue.identifier == "paused"){
+            let controller = segue.destination as! PausedViewController
+            controller.mode = 1
+            isPaused = true
+        }
     }
     
     override func didReceiveMemoryWarning() {

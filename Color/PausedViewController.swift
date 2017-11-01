@@ -10,10 +10,12 @@ import UIKit
 
 class PausedViewController: UIViewController {
     
+    var mode = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,11 +24,16 @@ class PausedViewController: UIViewController {
     }
     
     @IBAction func unpause(_ sender: Any) {
-        let presentingViewController: UIViewController! = self.presentingViewController
-        
-        self.dismiss(animated: false) {
-            // go back to MainMenuView as the eyes of the user
-            presentingViewController.dismiss(animated: false, completion: nil)
+        // Unpause parent VC
+        if (mode == 1){
+            let parentVC = (self.presentingViewController)! as! ViewController
+            parentVC.isPaused = false
         }
+        if (mode == 2){
+            let parentVC = (self.presentingViewController)! as! ModifiedViewController
+            parentVC.isPaused = false
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }

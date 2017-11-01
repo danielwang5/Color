@@ -60,6 +60,7 @@ class ModifiedViewController: UIViewController {
     var startTime:Int = 3000 //in centiseconds
     var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
+    var isPaused:Bool = false
     
     //Score
     var score:Int = 0
@@ -151,17 +152,18 @@ class ModifiedViewController: UIViewController {
     }
     
     func timerAction() {
-        
-        if(counter <= 0){
-            timer.invalidate()
-            finish()
+        if(!isPaused){
+            if(counter <= 0){
+                timer.invalidate()
+                finish()
+            }
+            
+            counter -= 1
+            
+            timeElapsedCurrent += 1
+            
+            updateBar(prog: Float(counter)/Float(startTime))
         }
-        
-        counter -= 1
-        
-        timeElapsedCurrent += 1
-        
-        updateBar(prog: Float(counter)/Float(startTime))
     }
     
     
@@ -304,24 +306,18 @@ class ModifiedViewController: UIViewController {
     }
     
     func playSound(soundName:String) {
-        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
-            print("url not found")
-            return
-        }
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
         
         do {
-            /// this codes for making this app ready to takeover the device audio
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            /// change fileTypeHint according to the type of your audio file (you can omit this)
+            let player = try AVAudioPlayer(contentsOf: url)
+            //guard let player = player else { return }
             
-            let player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
-            
-            // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
             player.play()
-        } catch let error as NSError {
-            print("error: \(error.localizedDescription)")
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -331,9 +327,16 @@ class ModifiedViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! StopViewController
-        controller.resultsModified = sender as! [SubmittedDataModified]
-        controller.mode = 2
+        if (segue.identifier == "finishedmodified"){
+            let controller = segue.destination as! StopViewController
+            controller.resultsModified = sender as! [SubmittedDataModified]
+            controller.mode = 2
+        }
+        else if (segue.identifier == "pausedmodified"){
+            let controller = segue.destination as! PausedViewController
+            controller.mode = 2
+            isPaused = true
+        }
     }
     
     override func didReceiveMemoryWarning() {
