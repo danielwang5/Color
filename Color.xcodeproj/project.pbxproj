@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480F22AF1FBD689E00073B3E /* LightingTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F22AE1FBD689E00073B3E /* LightingTestController.swift */; };
 		4857EECF1E2DF25A00801CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4857EECE1E2DF25A00801CBB /* AppDelegate.swift */; };
 		4857EED11E2DF25A00801CBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4857EED01E2DF25A00801CBB /* ViewController.swift */; };
-		4857EED41E2DF25A00801CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4857EED21E2DF25A00801CBB /* Main.storyboard */; };
 		4857EED71E2DF25A00801CBB /* Color.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4857EED51E2DF25A00801CBB /* Color.xcdatamodeld */; };
 		4857EED91E2DF25A00801CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4857EED81E2DF25A00801CBB /* Assets.xcassets */; };
 		4857EEDC1E2DF25A00801CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */; };
@@ -20,6 +20,8 @@
 		487475EB1E7F79F900F79086 /* DrawingTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487475EA1E7F79F900F79086 /* DrawingTestController.swift */; };
 		4892FD121F92E35800A75A83 /* Ding-sfx.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4892FD111F92E35800A75A83 /* Ding-sfx.mp3 */; };
 		4892FD161F92E4B600A75A83 /* Buzz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4892FD151F92E4B600A75A83 /* Buzz.mp3 */; };
+		489B0C8D1FC67C9F00CFB42E /* LightingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B0C8C1FC67C9F00CFB42E /* LightingTestView.swift */; };
+		489B0C901FCA374700CFB42E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489B0C8E1FCA374700CFB42E /* Main.storyboard */; };
 		48B2D76C1ECC0FC00069929B /* DigitParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2D76B1ECC0FC00069929B /* DigitParams.swift */; };
 		48DF48BA1F9A7A190011169B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DF48B91F9A7A190011169B /* GameKit.framework */; };
 		48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F981C81E833F800050C180 /* DrawingTestView.swift */; };
@@ -30,10 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480F22AE1FBD689E00073B3E /* LightingTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingTestController.swift; sourceTree = "<group>"; };
 		4857EECB1E2DF25A00801CBB /* Color.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Color.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4857EECE1E2DF25A00801CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4857EED01E2DF25A00801CBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4857EED31E2DF25A00801CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4857EED61E2DF25A00801CBB /* Color.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Color.xcdatamodel; sourceTree = "<group>"; };
 		4857EED81E2DF25A00801CBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4857EEDB1E2DF25A00801CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		487475EA1E7F79F900F79086 /* DrawingTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestController.swift; sourceTree = "<group>"; };
 		4892FD111F92E35800A75A83 /* Ding-sfx.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ding-sfx.mp3"; sourceTree = "<group>"; };
 		4892FD151F92E4B600A75A83 /* Buzz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Buzz.mp3; sourceTree = "<group>"; };
+		489B0C8C1FC67C9F00CFB42E /* LightingTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingTestView.swift; sourceTree = "<group>"; };
+		489B0C8F1FCA374700CFB42E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48B2D76B1ECC0FC00069929B /* DigitParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitParams.swift; sourceTree = "<group>"; };
 		48DF48B91F9A7A190011169B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		48F981C81E833F800050C180 /* DrawingTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTestView.swift; sourceTree = "<group>"; };
@@ -97,10 +101,12 @@
 				4863AC6A1E43AF1700CDC808 /* StopViewController.swift */,
 				48FF36A91F01D08B00BCB159 /* DataParams.swift */,
 				48B2D76B1ECC0FC00069929B /* DigitParams.swift */,
+				480F22AE1FBD689E00073B3E /* LightingTestController.swift */,
+				489B0C8C1FC67C9F00CFB42E /* LightingTestView.swift */,
 				487475EA1E7F79F900F79086 /* DrawingTestController.swift */,
 				48F981C81E833F800050C180 /* DrawingTestView.swift */,
 				4857EEF01E37061800801CBB /* ResultData.swift */,
-				4857EED21E2DF25A00801CBB /* Main.storyboard */,
+				489B0C8E1FCA374700CFB42E /* Main.storyboard */,
 				4857EED81E2DF25A00801CBB /* Assets.xcassets */,
 				4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */,
 				4857EEDD1E2DF25A00801CBB /* Info.plist */,
@@ -201,10 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4857EEDC1E2DF25A00801CBB /* LaunchScreen.storyboard in Resources */,
+				489B0C901FCA374700CFB42E /* Main.storyboard in Resources */,
 				4857EED91E2DF25A00801CBB /* Assets.xcassets in Resources */,
 				4892FD161F92E4B600A75A83 /* Buzz.mp3 in Resources */,
 				4892FD121F92E35800A75A83 /* Ding-sfx.mp3 in Resources */,
-				4857EED41E2DF25A00801CBB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +223,8 @@
 			files = (
 				487475EB1E7F79F900F79086 /* DrawingTestController.swift in Sources */,
 				4857EEF11E37061800801CBB /* ResultData.swift in Sources */,
+				489B0C8D1FC67C9F00CFB42E /* LightingTestView.swift in Sources */,
+				480F22AF1FBD689E00073B3E /* LightingTestController.swift in Sources */,
 				4857EED11E2DF25A00801CBB /* ViewController.swift in Sources */,
 				48F981C91E833F800050C180 /* DrawingTestView.swift in Sources */,
 				48FF36A81EEA19BE00BCB159 /* ModifiedViewController.swift in Sources */,
@@ -235,20 +243,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4857EED21E2DF25A00801CBB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4857EED31E2DF25A00801CBB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4857EEDA1E2DF25A00801CBB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4857EEDB1E2DF25A00801CBB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		489B0C8E1FCA374700CFB42E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				489B0C8F1FCA374700CFB42E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -65,7 +65,7 @@ class DrawingTestView: UIView{
         //var buffer =  new ArrayBuffer(SIZE);
         //var area   = new Int8Array(buffer);
         
-        var area = [Int](repeating: 0, count:SIZE)
+        var area = [Int](repeating: 0, count: SIZE)
         
         // chunk size
         let CHUNK_SIZE = MAX_R * 2;
@@ -283,7 +283,7 @@ class DrawingTestView: UIView{
             
             let radius = getRadius(x: center.x, y: center.y);
             
-            if(radius >= 0.0) {
+            if(radius >= 0.0 && pow(center.x - Double(WIDTH)/2, 2.0) + pow(center.y - Double(HEIGHT)/2.0, 2.0) <= pow(Double(WIDTH)/2.0, 2.0) ){ //if coordinate is within circle of entire plate
                 let circle = Circle(x1: Double(center.x), y1: center.y, radius1: radius);
                 var chunk  = getChunk(x: center.x, y: center.y);
                 

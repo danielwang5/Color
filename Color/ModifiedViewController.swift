@@ -282,7 +282,7 @@ class ModifiedViewController: UIViewController {
         }
     }
     
-    @IBAction func paused(_ sender: Any) {
+    /*@IBAction func paused(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PausedViewController")
         vc?.modalPresentationStyle = .overCurrentContext
         
@@ -303,7 +303,7 @@ class ModifiedViewController: UIViewController {
             okayButton.addTarget(self, action: #selector(self.okButtonImplementation:), forControlEvents:.TouchUpInside)*/
         
         
-    }
+    }*/
     
     func playSound(soundName:String) {
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }

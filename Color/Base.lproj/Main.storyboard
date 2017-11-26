@@ -27,7 +27,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Original"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="7mb-dT-dtx"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="6jB-9R-ge2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Test!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-N7-EBz">
@@ -84,6 +84,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSW-94-rLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="-457.42128935532236"/>
+        </scene>
+        <!--Lighting Test Controller-->
+        <scene sceneID="FXa-T7-ick">
+            <objects>
+                <viewController id="aIP-uC-45G" customClass="LightingTestController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6kF-RV-Agh"/>
+                        <viewControllerLayoutGuide type="bottom" id="uRX-mK-BlI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ctC-ZW-5wx" customClass="LightingTestView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="lightView" destination="ctC-ZW-5wx" id="vdI-bw-wDu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u33-PB-5Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-548" y="-1316"/>
         </scene>
         <!--Drawing Test Controller-->
         <scene sceneID="21g-G8-1Vv">
@@ -225,8 +246,7 @@
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="22"/>
                                 <state key="normal" title="I I"/>
                                 <connections>
-                                    <action selector="paused:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YpE-Ho-sI6"/>
-                                    <segue destination="Lf7-qU-tbP" kind="presentation" id="8nF-PZ-fwp"/>
+                                    <segue destination="Lf7-qU-tbP" kind="presentation" identifier="paused" id="8nF-PZ-fwp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -239,7 +259,6 @@
                     </view>
                     <connections>
                         <outlet property="answerField" destination="Vdc-7k-KAF" id="zM2-9E-H2m"/>
-                        <outlet property="paused" destination="Xah-kO-K1p" id="ryS-oB-698"/>
                         <outlet property="plateView" destination="rd2-E4-SKO" id="hVg-k9-vhH"/>
                         <outlet property="problemLabel" destination="DTH-l1-EA4" id="ApM-G3-Gbp"/>
                         <outlet property="submitButton" destination="lgI-vL-Eot" id="OkS-rR-lOz"/>
@@ -249,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-93"/>
+            <point key="canvasLocation" x="953" y="-93"/>
         </scene>
         <!--Modified View Controller-->
         <scene sceneID="hYM-bO-vmp">
@@ -409,8 +428,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="8nF-PZ-fwp"/>
         <segue reference="MyP-fh-tEV"/>
-        <segue reference="x7L-8p-siI"/>
-        <segue reference="yCa-DB-ILp"/>
+        <segue reference="BDf-99-GAg"/>
     </inferredMetricsTieBreakers>
 </document>

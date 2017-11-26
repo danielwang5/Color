@@ -276,12 +276,12 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func paused(_ sender: Any) {
+    /*@IBAction func paused(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PausedViewController")
         vc?.modalPresentationStyle = .overCurrentContext
         
         self.present(vc!, animated: true, completion: nil)
-    }
+    }*/
     
     func playSound(soundName:String) {
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
