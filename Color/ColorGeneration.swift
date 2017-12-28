@@ -70,7 +70,7 @@ class ColorGeneration{
     }
 }
 
-extension Float {
+extension Float { // add random capabilities for float
     private static let arc4randomMax = Float(UInt32.max)
     
     static func random01() -> Float {
@@ -78,7 +78,7 @@ extension Float {
     }
 }
 
-func rgbToLab(R:Double, G:Double, B:Double) -> [Double]{
+func rgbToLab(R:Double, G:Double, B:Double) -> [Double]{ // Convert RGB to CIE-LAB
     
     var r, g, b, X, Y, Z, xr, yr, zr:Double
     

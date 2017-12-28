@@ -89,6 +89,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //make plateView a square
+        /*let plateXCoord = plateView.frame.origin.x + (plateView.frame.size.width - plateView.frame.size.height)/2
+        plateView.frame = CGRect(x: plateXCoord, y: plateView.frame.origin.y, width: plateView.frame.size.height, height: plateView.frame.size.height)*/
+        plateView.frame.size = CGSize(width:plateView.frame.size.height, height:plateView.frame.size.height)
         
         //BG Color
         self.view.backgroundColor = UIColor(colorLiteralRed: oRed, green: oGreen, blue: oBlue, alpha: oAlpha)
