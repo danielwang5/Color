@@ -53,12 +53,12 @@ class DrawingTestView: UIView{
         let CIRCLE_ITERATIONS:Int = 10000
         let SPACING:Double = 0.5
         
-        let MIN_R:Double = 1.5;
-        let MAX_R:Double = 5;
+        let MIN_R:Double = Double(globalViewHeight)/240 * 1.5;
+        let MAX_R:Double = Double(globalViewHeight)/240 * 5;
         
         // canvas size
-        let WIDTH:Int  = 240;
-        let HEIGHT:Int = 240;
+        let WIDTH:Int  = globalViewHeight; //default 240
+        let HEIGHT:Int = WIDTH;
         let SIZE = WIDTH * HEIGHT;
         
         // buffer for store ineligible positions of circles

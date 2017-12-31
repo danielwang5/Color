@@ -29,6 +29,9 @@ import UIKit
 import Foundation
 import AVFoundation
 
+//global view height
+var globalViewHeight = 240;
+
 class ModifiedViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,6 +64,7 @@ class ModifiedViewController: UIViewController {
     var counter:Int = 0 //will equal startTime in viewDidLoad()
     var timer = Timer()
     var isPaused:Bool = false
+    var timerInit = true //initialize things via timer
     
     //Score
     var score:Int = 0
@@ -79,7 +83,7 @@ class ModifiedViewController: UIViewController {
     
     var randNum:Int = 0
     
-    var nthQuestion:Int = 0
+    var nthQuestion:Int = -1
     var difficulty:Int = 0
     
     var numCorrect:Int = 0
@@ -157,11 +161,16 @@ class ModifiedViewController: UIViewController {
         
         //make plateView a square
         
-        if(counter == startTime - 1){
-            
-            let plateXCoord = plateView.frame.origin.x + (plateView.frame.size.width - plateView.frame.size.height)/2
-            plateView.frame = CGRect(x: plateXCoord, y: plateView.frame.origin.y, width: plateView.frame.size.height, height: plateView.frame.size.height)
+        let plateXCoord = plateView.frame.origin.x + (plateView.frame.size.width - plateView.frame.size.height)/2
+        plateView.frame = CGRect(x: plateXCoord, y: plateView.frame.origin.y, width: plateView.frame.size.height, height: plateView.frame.size.height)
+        
+        globalViewHeight = Int(plateView.frame.size.height)
+        
+        if(timerInit){
+            goForward()
+            timerInit = false
         }
+        
         
         if(!isPaused){
             if(counter <= 0){
@@ -180,6 +189,10 @@ class ModifiedViewController: UIViewController {
     
     func updateBar(prog:Float){
         timerBar.setProgress(prog, animated: true)
+    }
+    
+    func getHeight() -> CGFloat{
+        return plateView.frame.size.height;
     }
     
     

@@ -297,10 +297,6 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK7-Oy-3VR" customClass="DrawingTestView" customModule="Color" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="40" width="240" height="188"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="0JB-Ue-TYQ"/>
-                                            <constraint firstAttribute="width" constant="240" id="Rac-gw-ZTl"/>
-                                        </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ea-o6-Qox">
                                         <rect key="frame" x="0.0" y="248" width="240" height="30"/>
@@ -329,13 +325,13 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="mYj-Hq-kWF"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="mwZ-xK-XhL"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="mYj-Hq-kWF"/>
                                     <constraint firstItem="BK7-Oy-3VR" firstAttribute="centerX" secondItem="ZSy-py-k0c" secondAttribute="centerX" id="zko-Cn-CLC"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-s3-rs3">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-s3-rs3">
                                 <rect key="frame" x="14" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="22"/>
                                 <state key="normal" title="I I"/>
                                 <connections>
@@ -347,8 +343,6 @@
                         <constraints>
                             <constraint firstItem="ZaH-YB-D5w" firstAttribute="top" secondItem="ZSy-py-k0c" secondAttribute="bottom" constant="250" id="1hC-1W-yXV"/>
                             <constraint firstItem="ZSy-py-k0c" firstAttribute="centerX" secondItem="s3s-Zi-ut1" secondAttribute="centerX" id="3xB-IL-TVQ"/>
-                            <constraint firstItem="Gwv-s3-rs3" firstAttribute="leading" secondItem="s3s-Zi-ut1" secondAttribute="leading" constant="14" id="XCx-Er-Gbi"/>
-                            <constraint firstItem="Gwv-s3-rs3" firstAttribute="top" secondItem="oAS-gS-f35" secondAttribute="bottom" id="her-lE-MyW"/>
                             <constraint firstItem="ZSy-py-k0c" firstAttribute="top" secondItem="oAS-gS-f35" secondAttribute="bottom" constant="20" id="mHR-Vt-NG8"/>
                         </constraints>
                     </view>
@@ -434,7 +428,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MyP-fh-tEV"/>
-        <segue reference="x7L-8p-siI"/>
-        <segue reference="yCa-DB-ILp"/>
+        <segue reference="8nF-PZ-fwp"/>
+        <segue reference="BDf-99-GAg"/>
     </inferredMetricsTieBreakers>
 </document>
