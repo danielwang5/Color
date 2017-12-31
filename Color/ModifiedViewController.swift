@@ -95,6 +95,8 @@ class ModifiedViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
+        
+        
         //Pause View
         //mycustomView.isHidden = true
         
@@ -152,6 +154,15 @@ class ModifiedViewController: UIViewController {
     }
     
     func timerAction() {
+        
+        //make plateView a square
+        
+        if(counter == startTime - 1){
+            
+            let plateXCoord = plateView.frame.origin.x + (plateView.frame.size.width - plateView.frame.size.height)/2
+            plateView.frame = CGRect(x: plateXCoord, y: plateView.frame.origin.y, width: plateView.frame.size.height, height: plateView.frame.size.height)
+        }
+        
         if(!isPaused){
             if(counter <= 0){
                 timer.invalidate()
